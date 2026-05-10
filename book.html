@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Assessment — ILIAD</title>
+
+    <meta name="description" content="Book your ILIAD performance assessment. Fill out the form and we'll be in touch within 24 hours to confirm a time.">
+    <meta name="theme-color" content="#0A0A0A">
+    <meta name="robots" content="noindex">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 32'><rect x='11' y='8' width='2' height='24' fill='%23B8956A'/><polygon points='12,0 18,8 6,8' fill='%23B8956A'/></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600;800&family=Newsreader:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="app.css">
+    <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">
+            <div class="logo-mark"></div>
+            <div class="logo-text">ILIAD</div>
+        </a>
+        <div class="nav-links">
+            <a href="testing.html" data-content="nav.testing">Testing</a>
+            <a href="programs.html" data-content="nav.programs">Programs</a>
+            <a href="journey.html" data-content="nav.journey">Journey</a>
+            <a href="about.html" data-content="nav.about">About</a>
+            <a href="pricing.html" data-content="nav.pricing">Pricing</a>
+        </div>
+        <a href="book.html" class="nav-cta active" data-content="nav.bookAssessment">Book Assessment</a>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+        <div class="mobile-menu-content">
+            <a href="testing.html" data-content="nav.testing">Testing</a>
+            <a href="programs.html" data-content="nav.programs">Programs</a>
+            <a href="journey.html" data-content="nav.journey">Journey</a>
+            <a href="about.html" data-content="nav.about">About</a>
+            <a href="pricing.html" data-content="nav.pricing">Pricing</a>
+            <a href="book.html" class="mobile-menu-cta" data-content="nav.bookAssessment">Book Assessment</a>
+        </div>
+    </div>
+
+    <section class="page-header">
+        <div class="page-header-watermark" aria-hidden="true">Book</div>
+        <div class="page-header-content reveal">
+            <div class="hero-label" data-content="book.header.label">Begin</div>
+            <h1 class="page-header-title" data-content="book.header.title">Book Your Assessment</h1>
+            <p class="hero-subtitle" data-content="book.header.subtitle">Ninety minutes that recalibrate your training.</p>
+            <p class="hero-description" data-content="book.header.description">
+                Fill out the form below. We'll be in touch within 24 hours to confirm a time
+                that works for you.
+            </p>
+        </div>
+    </section>
+
+    <section class="booking-section reveal">
+        <!-- Formspree config: replace YOUR_FORM_ID below with your endpoint ID (the part after /f/). -->
+        <form class="booking-form" action="https://formspree.io/f/xlgzolbq" method="POST">
+            <input type="hidden" name="_subject" value="ILIAD — New assessment booking request">
+            <input type="hidden" name="_next" value="thanks.html">
+            <!-- Honeypot: hidden from real users; bots fill it and get rejected -->
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+            <div class="form-row">
+                <label for="name">Name <span class="form-required">*</span></label>
+                <input type="text" id="name" name="name" required autocomplete="name">
+            </div>
+
+            <div class="form-row">
+                <label for="email">Email <span class="form-required">*</span></label>
+                <input type="email" id="email" name="email" required autocomplete="email">
+            </div>
+
+            <div class="form-row">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" autocomplete="tel">
+            </div>
+
+            <div class="form-row">
+                <label for="sport">Sport / activity</label>
+                <input type="text" id="sport" name="sport" placeholder="e.g. football, lifting, general fitness">
+            </div>
+
+            <div class="form-row">
+                <label for="goal">Primary goal</label>
+                <select id="goal" name="goal">
+                    <option value="">Select one…</option>
+                    <option value="performance">Improve performance</option>
+                    <option value="injury-return">Return from injury</option>
+                    <option value="injury-prevention">Reduce injury risk</option>
+                    <option value="combine">Combine / pro day prep</option>
+                    <option value="general-fitness">General fitness &amp; longevity</option>
+                    <option value="team">Team / roster assessment</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-row">
+                <label for="dates">Preferred dates / times</label>
+                <input type="text" id="dates" name="dates" placeholder="e.g. weekday mornings, mid-March">
+            </div>
+
+            <div class="form-row">
+                <label for="notes">Anything else we should know?</label>
+                <textarea id="notes" name="notes" rows="4" placeholder="Injury history, current training, specific concerns…"></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary form-submit">Send Request</button>
+
+            <p class="form-fineprint">
+                We'll respond within 24 hours. By submitting, you agree to our
+                <a href="privacy.html">Privacy Policy</a>.
+            </p>
+        </form>
+
+        <aside class="booking-aside">
+            <h3 class="booking-aside-title">What happens next</h3>
+            <ol class="booking-steps">
+                <li><strong>Within 24 hours:</strong> we email you back with available times.</li>
+                <li><strong>Day of:</strong> arrive 10 min early, athletic clothing, plates pre-calibrated. Light snack 60–90 min before.</li>
+                <li><strong>90 minutes on-site:</strong> three protocols, video capture, no surprises.</li>
+                <li><strong>Within one week:</strong> written report and a 30-min results call.</li>
+            </ol>
+            <h3 class="booking-aside-title">Other ways to reach us</h3>
+            <ul class="booking-contact">
+                <li><a href="mailto:hello@iliadlab.com">hello@iliadlab.com</a></li>
+                <li><a href="tel:+15554523742">+1 (555) 452-3742</a></li>
+                <li>San Diego, CA</li>
+            </ul>
+        </aside>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-container">
+            <div>
+                <div class="footer-brand">
+                    <div class="footer-logo-mark"></div>
+                    <span>ILIAD</span>
+                </div>
+                <div class="footer-tagline" data-content="brand.tagline">Where heroes are tested</div>
+                <p class="footer-description" data-content="brand.description">
+                    A modern performance testing facility drawing from the greatest epic ever told.
+                    Find your weakness before it finds you. Write your own legend.
+                </p>
+            </div>
+
+            <div>
+                <div class="footer-title" data-content="footer.testingTitle">Testing</div>
+                <ul class="footer-links">
+                    <li><a href="testing.html#force-plates" data-content="footer.forcePlatesLink">Force Plates</a></li>
+                    <li><a href="testing.html#speed" data-content="footer.speedLink">Speed Analysis</a></li>
+                    <li><a href="testing.html#movement-screening" data-content="footer.movementLink">Movement Screening</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <div class="footer-title" data-content="footer.programsTitle">Programs</div>
+                <ul class="footer-links">
+                    <li><a href="programs.html#performance-coaching" data-content="footer.coachingLink">Performance Coaching</a></li>
+                    <li><a href="programs.html#personal-training" data-content="footer.trainingLink">Personal Training</a></li>
+                    <li><a href="programs.html#corrective-exercise" data-content="footer.correctiveLink">Corrective Exercise</a></li>
+                    <li><a href="programs.html#recovery" data-content="footer.recoveryLink">Recovery &amp; Stretching</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <div class="footer-title" data-content="footer.contactTitle">Contact</div>
+                <ul class="footer-links">
+                    <li><a href="mailto:hello@iliadlab.com" data-content="contact.email">hello@iliadlab.com</a></li>
+                    <li><a href="tel:+15554523742" data-content="contact.phone">+1 (555) 452-3742</a></li>
+                    <li><a href="#contact" data-content="contact.location">San Diego, CA</a></li>
+                    <li><a href="book.html" data-content="footer.bookAssessmentLink">Book Assessment</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div data-content="brand.copyright">© 2026 Iliad. All rights reserved.</div>
+            <div><a href="privacy.html">Privacy Policy</a> • <a href="terms.html">Terms of Service</a></div>
+        </div>
+    </footer>
+
+    <script src="content.js" defer></script>
+    <script src="app.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testing — ILIAD</title>
+
+    <meta name="description" content="ILIAD performance testing: force plate analysis, laser-timed speed profiling, and 7-pattern movement screening. The full diagnostic, in 90 minutes.">
+    <meta name="theme-color" content="#0A0A0A">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Testing — ILIAD">
+    <meta property="og:description" content="Three protocols. One complete picture. Find the flaw before it finds you.">
+    <meta property="og:image" content="og-image.jpg">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 32'><rect x='11' y='8' width='2' height='24' fill='%23B8956A'/><polygon points='12,0 18,8 6,8' fill='%23B8956A'/></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;600;800&family=Newsreader:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="app.css">
+    <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">
+            <div class="logo-mark"></div>
+            <div class="logo-text">ILIAD</div>
+        </a>
+        <div class="nav-links">
+            <a href="testing.html" class="active" data-static-active="true" data-content="nav.testing">Testing</a>
+            <a href="programs.html" data-content="nav.programs">Programs</a>
+            <a href="journey.html" data-content="nav.journey">Journey</a>
+            <a href="about.html" data-content="nav.about">About</a>
+            <a href="pricing.html" data-content="nav.pricing">Pricing</a>
+        </div>
+        <a href="book.html" class="nav-cta" data-content="nav.bookAssessment">Book Assessment</a>
+        <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobile-menu" aria-hidden="true">
+        <div class="mobile-menu-content">
+            <a href="testing.html" class="active" data-content="nav.testing">Testing</a>
+            <a href="programs.html" data-content="nav.programs">Programs</a>
+            <a href="journey.html" data-content="nav.journey">Journey</a>
+            <a href="about.html" data-content="nav.about">About</a>
+            <a href="pricing.html" data-content="nav.pricing">Pricing</a>
+            <a href="book.html" class="mobile-menu-cta" data-content="nav.bookAssessment">Book Assessment</a>
+        </div>
+    </div>
+
+    <aside class="chapter-rail" role="navigation" aria-label="Chapter navigation">
+        <a href="#force-plates" class="rail-item" data-target="force-plates">
+            <span class="rail-num">I</span>
+            <span class="rail-label">Force Plates</span>
+        </a>
+        <a href="#speed" class="rail-item" data-target="speed">
+            <span class="rail-num">II</span>
+            <span class="rail-label">Timing Gates</span>
+        </a>
+        <a href="#movement-screening" class="rail-item" data-target="movement-screening">
+            <span class="rail-num">III</span>
+            <span class="rail-label">Movement Screen</span>
+        </a>
+    </aside>
+
+    <section class="page-header">
+        <div class="page-header-watermark" aria-hidden="true">Testing</div>
+        <div class="page-header-content reveal">
+            <div class="hero-label" data-content="testing.header.label">The Diagnostic</div>
+            <h1 class="page-header-title" data-content="testing.header.title">Testing</h1>
+            <p class="hero-subtitle" data-content="testing.header.subtitle">Three protocols. One complete picture.</p>
+            <p class="hero-description" data-content="testing.header.description">
+                A 90-minute assessment built to expose what compensation has been hiding.
+                Force plates measure power and asymmetry. Laser gates capture velocity in milliseconds.
+                A seven-pattern screen reveals the movement quality underneath. Together they produce
+                a profile no single test can.
+            </p>
+        </div>
+    </section>
+
+    <div class="greek-pattern"></div>
+
+    <section class="protocol reveal" id="force-plates">
+        <div class="service-number" data-content="testing.forcePlates.number">CHAPTER I</div>
+        <h2 class="protocol-title" data-content="testing.forcePlates.title">Force Plate Testing</h2>
+        <p class="protocol-lead" data-content="testing.forcePlates.lead">
+            Every athlete has a stronger side. Most don't know which one — until it breaks.
+            Force plate testing puts numbers on what compensation has been hiding for years.
+        </p>
+
+        <div class="protocol-media" aria-hidden="true">
+            <svg viewBox="0 0 600 250" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+                <rect x="80" y="0" width="160" height="250" fill="rgba(184,149,106,0.05)"/>
+                <rect x="240" y="0" width="68" height="250" fill="rgba(184,149,106,0.05)"/>
+                <rect x="308" y="0" width="80" height="250" fill="rgba(184,149,106,0.05)"/>
+                <rect x="388" y="0" width="170" height="250" fill="rgba(184,149,106,0.05)"/>
+
+                <g font-family="Newsreader,serif" font-style="italic" fill="rgba(184,149,106,0.75)" text-anchor="middle">
+                    <text x="160" y="18" font-size="11">Eccentric</text>
+                    <text x="160" y="32" font-size="11">Phase</text>
+                    <text x="274" y="18" font-size="11">Concentric</text>
+                    <text x="274" y="32" font-size="11">Phase</text>
+                    <text x="348" y="18" font-size="11">Flight</text>
+                    <text x="348" y="32" font-size="11">Phase</text>
+                    <text x="473" y="18" font-size="11">Landing</text>
+                    <text x="473" y="32" font-size="11">Phase</text>
+                </g>
+
+                <line x1="0" y1="160" x2="600" y2="160" stroke="rgba(184,149,106,0.22)" stroke-width="0.8" stroke-dasharray="3 4"/>
+
+                <path d="M 0 162 L 80 162 Q 100 162 115 176 Q 135 186 155 178 Q 175 168 195 130 Q 220 100 250 110 Q 275 120 290 160 Q 300 172 305 230 L 388 230 Q 395 230 405 120 Q 412 105 420 130 Q 430 135 438 135 Q 450 150 470 162 Q 490 162 510 162 L 600 162"
+                      fill="none" stroke="rgba(184,149,106,0.55)" stroke-width="1.2" stroke-linejoin="round"/>
+
+                <path d="M 0 160 L 80 160 Q 100 160 115 174 Q 135 184 155 176 Q 175 166 195 125 Q 220 95 250 105 Q 275 115 290 158 Q 300 170 305 230 L 388 230 Q 395 230 405 110 Q 412 95 420 125 Q 430 130 438 130 Q 450 145 470 158 Q 490 160 510 160 L 600 160"
+                      fill="none" stroke="#B8956A" stroke-width="1.4" stroke-linejoin="round"/>
+
+                <path d="M 0 160 L 80 160 Q 100 160 115 182 Q 135 195 155 184 Q 175 172 195 105 Q 215 60 250 52 Q 280 62 297 125 Q 305 145 308 230 L 388 230 Q 393 230 400 88 Q 405 50 412 62 Q 422 90 432 105 Q 442 100 452 130 Q 462 160 478 168 Q 495 162 510 160 L 600 160"
+                      fill="none" stroke="#E8E3DA" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+
+                <g font-family="Inter,sans-serif" font-size="9" font-weight="700" fill="#0A0A0A" text-anchor="middle">
+                    <rect x="73" y="153" width="14" height="14" fill="#B8956A" rx="1.5"/>
+                    <text x="80" y="164">1</text>
+                    <rect x="243" y="45" width="14" height="14" fill="#B8956A" rx="1.5"/>
+                    <text x="250" y="56">2</text>
+                    <rect x="341" y="223" width="14" height="14" fill="#B8956A" rx="1.5"/>
+                    <text x="348" y="234">3</text>
+                    <rect x="402" y="43" width="14" height="14" fill="#B8956A" rx="1.5"/>
+                    <text x="409" y="54">4</text>
+                    <rect x="553" y="153" width="14" height="14" fill="#B8956A" rx="1.5"/>
+                    <text x="560" y="164">5</text>
+                </g>
+            </svg>
+        </div>
+
+        <h3 class="protocol-subhead" data-content="testing.forcePlates.measureHead">What we measure</h3>
+        <ul class="service-features" data-content="testing.forcePlates.measureItems">
+            <li>Countermovement jump (CMJ) — peak force, peak power, jump height</li>
+            <li>Single-leg jump asymmetry — left vs. right force production</li>
+            <li>Reactive strength index — stretch-shortening cycle efficiency</li>
+            <li>Isometric mid-thigh pull — maximum force in a controlled position</li>
+            <li>Concentric / eccentric phase splits — where the asymmetry actually lives</li>
+            <li>Rate of force development — how fast the engine spins up</li>
+        </ul>
+
+        <h3 class="protocol-subhead" data-content="testing.forcePlates.howItWorksHead">How it works</h3>
+        <p class="protocol-prose" data-content="testing.forcePlates.howItWorksProse">
+            Three to five repetitions per protocol on dual force plates sampling at 1000Hz.
+            The software produces a side-by-side comparison and benchmarks results against
+            position-specific norms. You leave with a written report; we keep a baseline
+            for comparison on the next visit.
+        </p>
+
+        <h3 class="protocol-subhead" data-content="testing.forcePlates.bestForHead">Best for</h3>
+        <p class="protocol-prose" data-content="testing.forcePlates.bestForProse">
+            Athletes returning from lower-body injury. Performers whose results have plateaued.
+            Combine and pro-day prep. Teams establishing a roster baseline. Anyone whose training
+            depends on jumping, sprinting, or single-leg power.
+        </p>
+        <span class="protocol-numeral" aria-hidden="true">I</span>
+    </section>
+
+    <div class="greek-pattern"></div>
+
+    <section class="protocol reveal" id="speed">
+        <div class="service-number" data-content="testing.speed.number">CHAPTER II</div>
+        <h2 class="protocol-title" data-content="testing.speed.title">Speed Analysis</h2>
+        <p class="protocol-lead" data-content="testing.speed.lead">
+            Speed is the most expensive trait in sport — and the easiest to misdiagnose.
+            A slow time might be an acceleration problem, a transition problem, a top-speed
+            problem, or a change-of-direction problem. Each one demands a different fix.
+            We measure all four.
+        </p>
+
+        <div class="protocol-media" aria-hidden="true">
+            <svg viewBox="0 0 600 290" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+                <text x="300" y="22" font-family="Newsreader,serif" font-style="italic" fill="rgba(184,149,106,0.75)" text-anchor="middle" font-size="12">Athlete vs Position Norm</text>
+
+                <text x="30" y="58" font-family="Newsreader,serif" font-style="italic" fill="rgba(184,149,106,0.85)" font-size="13">Acceleration</text>
+                <text x="30" y="73" font-family="Inter,sans-serif" font-size="9" font-weight="600" letter-spacing="2" fill="rgba(255,255,255,0.5)">0–10 YD</text>
+                <rect x="180" y="50" width="280" height="9" fill="rgba(232,227,218,0.35)"/>
+                <text x="468" y="58" font-family="Inter,sans-serif" font-size="10" font-weight="500" fill="rgba(232,227,218,0.7)">1.85s</text>
+                <rect x="180" y="63" width="257" height="9" fill="#B8956A"/>
+                <text x="445" y="71" font-family="Inter,sans-serif" font-size="10" font-weight="600" fill="#B8956A">1.70s</text>
+
+                <text x="30" y="108" font-family="Newsreader,serif" font-style="italic" fill="rgba(184,149,106,0.85)" font-size="13">Transition</text>
+                <text x="30" y="123" font-family="Inter,sans-serif" font-size="9" font-weight="600" letter-spacing="2" fill="rgba(255,255,255,0.5)">10–20 YD</text>
+                <rect x="180" y="100" width="280" height="9" fill="rgba(232,227,218,0.35)"/>
+                <text x="468" y="108" font-family="Inter,sans-serif" font-size="10" font-weight="500" fill="rgba(232,227,218,0.7)">1.15s</text>
+                <rect x="180" y="113" width="256" height="9" fill="#B8956A"/>
+                <text x="444" y="121" font-family="Inter,sans-serif" font-size="10" font-weight="600" fill="#B8956A">1.05s</text>
+
+                <text x="30" y="158" font-family="Newsreader,serif" font-style="italic" fill="rgba(184,149,106,0.85)" font-size="13">Top Speed</text>
+                <text x="30" y="173" font-family="Inter,sans-serif" font-size="9" font-weight="600" letter-spacing="2" fill="rgba(255,255,255,0.5)">20–30 YD</text>
+                <rect x="180" y="150" width="280" height="9" fill="rgba(232,227,218,0.35)"/>
+                <text x="468" y="158" font-family="Inter,sans-serif" font-size="10" font-weight="500" fill="rgba(232,227,218,0.7)">0.98s</text>
+                <rect x="180" y="163" width="263" height="9" fill="#B8956A"/>
+                <text x="451" y="171" font-family="Inter,sans-serif" font-size="10" font-weight="600" fill="#B8956A">0.92s</text>
+
+                <text x="30" y="208" font-family="Newsreader,serif" font-style="italic" fill="rgba(184,149,106,0.85)" font-size="13">Change of Direction</text>
+                <text x="30" y="223" font-family="Inter,sans-serif" font-size="9" font-weight="600" letter-spacing="2" fill="rgba(255,255,255,0.5)">5-10-5</text>
+                <rect x="180" y="200" width="280" height="9" fill="rgba(232,227,218,0.35)"/>
+                <text x="468" y="208" font-family="Inter,sans-serif" font-size="10" font-weight="500" fill="rgba(232,227,218,0.7)">4.62s</text>
+                <rect x="180" y="213" width="270" height="9" fill="#B8956A"/>
+                <text x="458" y="221" font-family="Inter,sans-serif" font-size="10" font-weight="600" fill="#B8956A">4.45s</text>
+
+                <line x1="180" y1="248" x2="540" y2="248" stroke="rgba(184,149,106,0.22)" stroke-width="0.8" stroke-dasharray="3 4"/>
+                <text x="180" y="268" font-family="Inter,sans-serif" font-size="8" font-weight="600" letter-spacing="2" fill="rgba(184,149,106,0.55)">FASTER ←</text>
+                <text x="540" y="268" font-family="Inter,sans-serif" font-size="8" font-weight="600" letter-spacing="2" fill="rgba(184,149,106,0.55)" text-anchor="end">→ SLOWER</text>
+            </svg>
+        </div>
+
+        <h3 class="protocol-subhead" data-content="testing.speed.measureHead">What we measure</h3>
+        <ul class="service-features" data-content="testing.speed.measureItems">
+            <li>0–10 yard acceleration — pure start power and initial drive</li>
+            <li>10–20 yard transition — how efficiently you build to top speed</li>
+            <li>20–30 yard top speed — peak velocity at full extension</li>
+            <li>5-10-5 pro-agility — change of direction under deceleration load</li>
+            <li>Phase splits — where in the sprint your speed is actually being lost</li>
+        </ul>
+
+        <h3 class="protocol-subhead" data-content="testing.speed.howItWorksHead">How it works</h3>
+        <p class="protocol-prose" data-content="testing.speed.howItWorksProse">
+            Laser timing gates capture velocity at four checkpoints — 0, 10, 20, and 30
+            yards — for three split times. The 5-10-5 pro-agility adds a change-of-direction
+            layer. Splits are compared against position and age norms so you know whether
+            your problem is the start, the build, the top end, or turning under speed.
+        </p>
+
+        <h3 class="protocol-subhead" data-content="testing.speed.bestForHead">Best for</h3>
+        <p class="protocol-prose" data-content="testing.speed.bestForProse">
+            Field and court athletes. Combine prep. Return-to-play after lower-body injury.
+            Any athlete who suspects their training is improving the wrong phase of speed.
+        </p>
+        <span class="protocol-numeral" aria-hidden="true">II</span>
+    </section>
+
+    <div class="greek-pattern"></div>
+
+    <section class="protocol reveal" id="movement-screening">
+        <div class="service-number" data-content="testing.movement.number">CHAPTER III</div>
+        <h2 class="protocol-title" data-content="testing.movement.title">Movement Screening</h2>
+        <p class="protocol-lead" data-content="testing.movement.lead">
+            Pain hides. Compensation works — until it doesn't. The screen finds the patterns
+            your body has been protecting against, before they become the reason you sit out
+            a season.
+        </p>
+
+        <div class="protocol-media" aria-hidden="true">
+            <svg viewBox="0 0 600 250" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+                <text x="300" y="22" font-family="Newsreader,serif" font-style="italic" fill="rgba(184,149,106,0.75)" text-anchor="middle" font-size="12">Where the Screen Found Limits</text>
+
+                <g stroke="rgba(232,227,218,0.45)" stroke-width="1.4" fill="none" stroke-linecap="round">
+                    <circle cx="300" cy="65" r="18"/>
+                    <line x1="300" y1="83" x2="300" y2="95"/>
+                    <path d="M 268 100 L 332 100 L 326 175 L 274 175 Z"/>
+                    <line x1="268" y1="100" x2="238" y2="172"/>
+                    <line x1="238" y1="172" x2="232" y2="200"/>
+                    <line x1="332" y1="100" x2="362" y2="172"/>
+                    <line x1="362" y1="172" x2="368" y2="200"/>
+                    <path d="M 274 175 L 326 175 L 322 192 L 278 192 Z"/>
+                    <line x1="285" y1="192" x2="285" y2="240"/>
+                    <line x1="315" y1="192" x2="315" y2="240"/>
+                </g>
+
+                <g>
+                    <circle cx="332" cy="103" r="11" fill="rgba(184,149,106,0.18)"/>
+                    <circle cx="332" cy="103" r="4.5" fill="#B8956A"/>
+                    <circle cx="278" cy="190" r="11" fill="rgba(184,149,106,0.18)"/>
+                    <circle cx="278" cy="190" r="4.5" fill="#B8956A"/>
+                    <circle cx="315" cy="218" r="11" fill="rgba(184,149,106,0.18)"/>
+                    <circle cx="315" cy="218" r="4.5" fill="#B8956A"/>
+                    <circle cx="285" cy="240" r="11" fill="rgba(184,149,106,0.18)"/>
+                    <circle cx="285" cy="240" r="4.5" fill="#B8956A"/>
+                </g>
+
+                <g font-family="Inter,sans-serif" font-size="9" font-weight="600" letter-spacing="2" fill="rgba(184,149,106,0.85)">
+                    <line x1="343" y1="103" x2="395" y2="103" stroke="rgba(184,149,106,0.4)" stroke-width="0.8"/>
+                    <text x="402" y="107">SHOULDER MOBILITY</text>
+                    <line x1="267" y1="190" x2="215" y2="190" stroke="rgba(184,149,106,0.4)" stroke-width="0.8"/>
+                    <text x="208" y="194" text-anchor="end">HIP ASYMMETRY</text>
+                    <line x1="326" y1="218" x2="395" y2="218" stroke="rgba(184,149,106,0.4)" stroke-width="0.8"/>
+                    <text x="402" y="222">KNEE VALGUS</text>
+                    <line x1="274" y1="240" x2="215" y2="240" stroke="rgba(184,149,106,0.4)" stroke-width="0.8"/>
+                    <text x="208" y="244" text-anchor="end">ANKLE DORSIFLEXION</text>
+                </g>
+            </svg>
+        </div>
+
+        <h3 class="protocol-subhead" data-content="testing.movement.measureHead">What we measure</h3>
+        <ul class="service-features" data-content="testing.movement.measureItems">
+            <li>Seven-pattern Functional Movement Screen — squat, hurdle, lunge, reach, raise, push, rotation</li>
+            <li>Composite asymmetry score — left-vs-right pattern integrity</li>
+            <li>Joint-level mobility limitations — ankle, hip, thoracic, shoulder</li>
+            <li>Video documentation — every pattern captured for review</li>
+            <li>Injury-risk scoring — composite below threshold flags elevated risk</li>
+        </ul>
+
+        <h3 class="protocol-subhead" data-content="testing.movement.howItWorksHead">How it works</h3>
+        <p class="protocol-prose" data-content="testing.movement.howItWorksProse">
+            Seven movement tests, each scored zero to three. Asymmetries and limitations
+            are flagged for the corrective program. Video is reviewed with you so you see
+            what we see — compensation made visible.
+        </p>
+
+        <h3 class="protocol-subhead" data-content="testing.movement.bestForHead">Best for</h3>
+        <p class="protocol-prose" data-content="testing.movement.bestForProse">
+            Anyone with a soft-tissue injury history. Athletes preparing for high-volume
+            training cycles. Returning competitors whose movement still feels "off" without
+            a clear reason why.
+        </p>
+        <span class="protocol-numeral" aria-hidden="true">III</span>
+    </section>
+
+    <div class="greek-pattern"></div>
+
+    <section class="cta-section">
+        <div class="cta-container">
+            <h2 class="cta-title" data-content="testing.cta.title">Begin the Diagnostic</h2>
+            <p class="cta-subtitle" data-content="testing.cta.subtitle">90 minutes. The full picture.</p>
+            <a href="book.html" class="btn-primary" data-content="buttons.scheduleAssessment">Schedule Assessment</a>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="footer-container">
+            <div>
+                <div class="footer-brand">
+                    <div class="footer-logo-mark"></div>
+                    <span>ILIAD</span>
+                </div>
+                <div class="footer-tagline" data-content="brand.tagline">Where heroes are tested</div>
+                <p class="footer-description" data-content="brand.description">
+                    A modern performance testing facility drawing from the greatest epic ever told.
+                    Find your weakness before it finds you. Write your own legend.
+                </p>
+            </div>
+
+            <div>
+                <div class="footer-title" data-content="footer.testingTitle">Testing</div>
+                <ul class="footer-links">
+                    <li><a href="testing.html#force-plates" data-content="footer.forcePlatesLink">Force Plates</a></li>
+                    <li><a href="testing.html#speed" data-content="footer.speedLink">Speed Analysis</a></li>
+                    <li><a href="testing.html#movement-screening" data-content="footer.movementLink">Movement Screening</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <div class="footer-title" data-content="footer.programsTitle">Programs</div>
+                <ul class="footer-links">
+                    <li><a href="programs.html#performance-coaching" data-content="footer.coachingLink">Performance Coaching</a></li>
+                    <li><a href="programs.html#personal-training" data-content="footer.trainingLink">Personal Training</a></li>
+                    <li><a href="programs.html#corrective-exercise" data-content="footer.correctiveLink">Corrective Exercise</a></li>
+                    <li><a href="programs.html#recovery" data-content="footer.recoveryLink">Recovery &amp; Stretching</a></li>
+                </ul>
+            </div>
+
+            <div>
+                <div class="footer-title" data-content="footer.contactTitle">Contact</div>
+                <ul class="footer-links">
+                    <li><a href="mailto:hello@iliadlab.com" data-content="contact.email">hello@iliadlab.com</a></li>
+                    <li><a href="tel:+15554523742" data-content="contact.phone">+1 (555) 452-3742</a></li>
+                    <li><a href="#contact" data-content="contact.location">San Diego, CA</a></li>
+                    <li><a href="book.html" data-content="footer.bookAssessmentLink">Book Assessment</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <div data-content="brand.copyright">© 2026 Iliad. All rights reserved.</div>
+            <div><a href="privacy.html">Privacy Policy</a> • <a href="terms.html">Terms of Service</a></div>
+        </div>
+    </footer>
+
+    <script src="content.js" defer></script>
+    <script src="app.js" defer></script>
+</body>
+</html>
