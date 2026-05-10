@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ILIAD — One-Page Summary</title>
+    <meta name="robots" content="noindex">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 32'><rect x='11' y='8' width='2' height='24' fill='%23B8956A'/><polygon points='12,0 18,8 6,8' fill='%23B8956A'/></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Newsreader:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        @page {
+            size: letter;
+            margin: 0.5in;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --paper: #FAF7F2;
+            --ink: #1A1A1A;
+            --muted: #5A5A5A;
+            --accent: #B8956A;
+            --rule: rgba(26, 26, 26, 0.12);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #E8E3DA;
+            color: var(--ink);
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.5;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            padding: 32px 16px;
+        }
+
+        .print-controls {
+            position: fixed;
+            top: 16px;
+            right: 16px;
+            z-index: 100;
+            display: flex;
+            gap: 8px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .print-controls button {
+            padding: 10px 18px;
+            background: var(--ink);
+            color: var(--paper);
+            border: none;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 2px;
+            transition: background 0.2s ease;
+        }
+
+        .print-controls button:hover {
+            background: var(--accent);
+            color: var(--ink);
+        }
+
+        .sheet {
+            width: 8.5in;
+            min-height: 11in;
+            background: var(--paper);
+            padding: 0.55in 0.6in;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0 6px 30px rgba(0, 0, 0, 0.08);
+            position: relative;
+        }
+
+        /* Header */
+        .head {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 1px solid var(--rule);
+            padding-bottom: 14px;
+            margin-bottom: 20px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-mark {
+            width: 14px;
+            height: 20px;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .brand-mark::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1.5px;
+            height: 20px;
+            background: var(--accent);
+        }
+
+        .brand-mark::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            border-bottom: 5px solid var(--accent);
+        }
+
+        .brand-text {
+            font-size: 22px;
+            font-weight: 300;
+            letter-spacing: 8px;
+        }
+
+        .head-meta {
+            text-align: right;
+            font-size: 9px;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .head-meta a {
+            color: var(--muted);
+            text-decoration: none;
+        }
+
+        /* Hero block */
+        .hero-block {
+            text-align: center;
+            margin-bottom: 26px;
+        }
+
+        .tagline {
+            font-family: 'Newsreader', serif;
+            font-style: italic;
+            font-size: 26px;
+            color: var(--accent);
+            margin-bottom: 12px;
+            line-height: 1.2;
+        }
+
+        .positioning {
+            font-size: 11.5px;
+            font-weight: 400;
+            line-height: 1.65;
+            color: var(--ink);
+            max-width: 6.4in;
+            margin: 0 auto;
+        }
+
+        /* Method */
+        .method {
+            background: rgba(184, 149, 106, 0.08);
+            border-left: 2px solid var(--accent);
+            padding: 14px 18px;
+            margin-bottom: 22px;
+        }
+
+        .method-label {
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 6px;
+        }
+
+        .method-title {
+            font-family: 'Newsreader', serif;
+            font-style: italic;
+            font-size: 18px;
+            font-weight: 400;
+            margin-bottom: 4px;
+        }
+
+        .method-text {
+            font-size: 10.5px;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        /* Two-column: Testing + Programs */
+        .columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+            margin-bottom: 22px;
+        }
+
+        .col-head {
+            font-size: 9px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 4px;
+        }
+
+        .col-title {
+            font-family: 'Newsreader', serif;
+            font-style: italic;
+            font-size: 16px;
+            font-weight: 400;
+            margin-bottom: 12px;
+        }
+
+        .item-list {
+            list-style: none;
+        }
+
+        .item {
+            display: flex;
+            gap: 10px;
+            padding: 8px 0;
+            border-top: 1px solid var(--rule);
+            align-items: flex-start;
+        }
+
+        .item:last-child { border-bottom: 1px solid var(--rule); }
+
+        .item-num {
+            font-family: 'Newsreader', serif;
+            font-style: italic;
+            font-size: 14px;
+            color: var(--accent);
+            min-width: 22px;
+            line-height: 1.2;
+        }
+
+        .item-body {
+            flex: 1;
+        }
+
+        .item-name {
+            font-size: 11.5px;
+            font-weight: 600;
+            color: var(--ink);
+            margin-bottom: 2px;
+        }
+
+        .item-desc {
+            font-size: 9.5px;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+
+        /* Journey */
+        .journey {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            padding: 14px 0;
+            border-top: 1px solid var(--rule);
+            border-bottom: 1px solid var(--rule);
+            margin-bottom: 22px;
+            position: relative;
+        }
+
+        .journey::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 12.5%;
+            right: 12.5%;
+            height: 1px;
+            background: repeating-linear-gradient(
+                to right,
+                var(--accent),
+                var(--accent) 4px,
+                transparent 4px,
+                transparent 8px
+            );
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        .journey-step {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .journey-num {
+            display: inline-block;
+            width: 28px;
+            height: 28px;
+            border: 1px solid var(--accent);
+            border-radius: 50%;
+            background: var(--paper);
+            font-family: 'Newsreader', serif;
+            font-style: italic;
+            font-size: 12px;
+            color: var(--accent);
+            line-height: 26px;
+            margin-bottom: 6px;
+        }
+
+        .journey-name {
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--ink);
+            margin-bottom: 2px;
+        }
+
+        .journey-desc {
+            font-size: 8.5px;
+            color: var(--muted);
+            line-height: 1.4;
+        }
+
+        /* Evidence */
+        .evidence {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+            margin-bottom: 22px;
+        }
+
+        .evidence-block {
+            border-left: 2px solid var(--accent);
+            padding-left: 12px;
+        }
+
+        .evidence-num {
+            font-family: 'Newsreader', serif;
+            font-style: italic;
+            font-size: 11px;
+            color: var(--accent);
+            margin-bottom: 2px;
+        }
+
+        .evidence-title {
+            font-size: 10.5px;
+            font-weight: 700;
+            margin-bottom: 4px;
+            line-height: 1.3;
+        }
+
+        .evidence-text {
+            font-size: 9px;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+
+        /* Foot CTA */
+        .foot {
+            margin-top: auto;
+            padding-top: 14px;
+            border-top: 1px solid var(--rule);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .foot-cta {
+            font-family: 'Newsreader', serif;
+            font-style: italic;
+            font-size: 18px;
+        }
+
+        .foot-cta strong {
+            font-style: normal;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .foot-meta {
+            text-align: right;
+            font-size: 9px;
+            font-weight: 500;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        .foot-meta a {
+            color: var(--muted);
+            text-decoration: none;
+        }
+
+        /* Print */
+        @media print {
+            body {
+                background: var(--paper);
+                padding: 0;
+                display: block;
+            }
+            .sheet {
+                width: 100%;
+                min-height: auto;
+                box-shadow: none;
+                padding: 0;
+            }
+            .print-controls {
+                display: none;
+            }
+        }
+
+        /* Smaller screen preview */
+        @media (max-width: 8.6in) {
+            .sheet {
+                width: 100%;
+                min-height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="print-controls">
+        <button onclick="window.print()">Print / Save as PDF</button>
+    </div>
+
+    <div class="sheet">
+
+        <header class="head">
+            <div class="brand">
+                <div class="brand-mark"></div>
+                <div class="brand-text">ILIAD</div>
+            </div>
+            <div class="head-meta">
+                <div>Performance Testing &amp; Training Facility</div>
+                <div>San Diego, CA</div>
+            </div>
+        </header>
+
+        <div class="hero-block">
+            <div class="tagline">Find your weakness. Write your epic.</div>
+            <p class="positioning">
+                ILIAD is a performance testing and training facility built on a single principle:
+                test before you train. We measure what other gyms guess at — force production,
+                sprint phases, movement quality — and we program from data instead of templates.
+            </p>
+        </div>
+
+        <div class="method">
+            <div class="method-label">The Method</div>
+            <div class="method-title">Most training is hope. Ours is method.</div>
+            <p class="method-text">
+                Every athlete starts with a 90-minute diagnostic. Every program is calibrated
+                from the data the diagnostic produces. Every six weeks we re-test to confirm
+                the work is producing the change we expected.
+            </p>
+        </div>
+
+        <div class="columns">
+            <div class="col">
+                <div class="col-head">Testing — The Diagnostic</div>
+                <div class="col-title">90 minutes. Three protocols.</div>
+                <ul class="item-list">
+                    <li class="item">
+                        <span class="item-num">I.</span>
+                        <div class="item-body">
+                            <div class="item-name">Force Plate Testing</div>
+                            <div class="item-desc">CMJ, single-leg, isometric pull. Power asymmetry exposed at 1000Hz.</div>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <span class="item-num">II.</span>
+                        <div class="item-body">
+                            <div class="item-name">Speed Analysis</div>
+                            <div class="item-desc">0–10 / 10–20 / 20–30 yard splits + 5-10-5 pro-agility. Phase-by-phase.</div>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <span class="item-num">III.</span>
+                        <div class="item-body">
+                            <div class="item-name">Movement Screening</div>
+                            <div class="item-desc">7-pattern FMS with video, asymmetry score, joint-level mobility flags.</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col">
+                <div class="col-head">Programs — From Diagnosis to Discipline</div>
+                <div class="col-title">Four programs, one philosophy.</div>
+                <ul class="item-list">
+                    <li class="item">
+                        <span class="item-num">I.</span>
+                        <div class="item-body">
+                            <div class="item-name">Performance Coaching</div>
+                            <div class="item-desc">1:1 sport-specific programming for the competitive athlete.</div>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <span class="item-num">II.</span>
+                        <div class="item-body">
+                            <div class="item-name">Personal Training</div>
+                            <div class="item-desc">General strength training for function and longevity.</div>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <span class="item-num">III.</span>
+                        <div class="item-body">
+                            <div class="item-name">Corrective Exercise</div>
+                            <div class="item-desc">Targeted intervention for asymmetries the screen revealed.</div>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <span class="item-num">IV.</span>
+                        <div class="item-body">
+                            <div class="item-name">Recovery &amp; Stretching</div>
+                            <div class="item-desc">Assisted stretching and structured recovery — the work between the work.</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="journey">
+            <div class="journey-step">
+                <div class="journey-num">I</div>
+                <div class="journey-name">Assess</div>
+                <div class="journey-desc">90-minute diagnostic</div>
+            </div>
+            <div class="journey-step">
+                <div class="journey-num">II</div>
+                <div class="journey-name">Analyze</div>
+                <div class="journey-desc">Identify the limiter</div>
+            </div>
+            <div class="journey-step">
+                <div class="journey-num">III</div>
+                <div class="journey-name">Optimize</div>
+                <div class="journey-desc">Calibrated programming</div>
+            </div>
+            <div class="journey-step">
+                <div class="journey-num">IV</div>
+                <div class="journey-name">Master</div>
+                <div class="journey-desc">Re-test, refine, repeat</div>
+            </div>
+        </div>
+
+        <div class="evidence">
+            <div class="evidence-block">
+                <div class="evidence-num">i.</div>
+                <div class="evidence-title">Calibrated training outproduces generic training</div>
+                <div class="evidence-text">Programming individualized against measured profile produces larger gains than uncalibrated programs of equal volume.</div>
+            </div>
+            <div class="evidence-block">
+                <div class="evidence-num">ii.</div>
+                <div class="evidence-title">Asymmetry detected is asymmetry that doesn't become injury</div>
+                <div class="evidence-text">Pre-season screening + structured corrective work in response to data is associated with reduced time-loss injuries.</div>
+            </div>
+            <div class="evidence-block">
+                <div class="evidence-num">iii.</div>
+                <div class="evidence-title">Athletic foundation is what every later quality is built on</div>
+                <div class="evidence-text">Athletes built on a measured foundation outlast athletes who specialize on top of unknowns.</div>
+            </div>
+        </div>
+
+        <footer class="foot">
+            <div class="foot-cta">
+                Begin: <strong>book the assessment</strong>
+            </div>
+            <div class="foot-meta">
+                <div><a href="mailto:hello@iliadlab.com">hello@iliadlab.com</a> &nbsp; · &nbsp; +1 (555) 452-3742</div>
+                <div><a href="https://mdsouzie-sketch.github.io/iliad/">mdsouzie-sketch.github.io/iliad</a></div>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>
