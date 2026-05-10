@@ -438,6 +438,83 @@
             to { opacity: 1; transform: translateY(0); }
         }
 
+        /* Print — one page, keep dark aesthetic */
+        @page {
+            size: letter;
+            margin: 0.4in;
+        }
+
+        @media print {
+            html, body {
+                background: var(--bg) !important;
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+                padding: 0 !important;
+                display: block !important;
+                min-height: 0;
+            }
+
+            .ambient { display: none !important; }
+
+            .sheet {
+                width: 100% !important;
+                max-width: none !important;
+                padding: 0 !important;
+                border: none !important;
+                box-shadow: none !important;
+                gap: 18px !important;
+                background: var(--bg) !important;
+                backdrop-filter: none !important;
+            }
+
+            /* Disable the staggered rise-in so all content prints fully */
+            .sheet > * {
+                opacity: 1 !important;
+                transform: none !important;
+                animation: none !important;
+            }
+
+            /* Tighten everything for one-page fit */
+            .head { padding-bottom: 14px; }
+            .brand-text { font-size: 18px; letter-spacing: 7px; }
+            .head-meta { font-size: 8px; line-height: 1.5; }
+
+            .hero-block { margin: 0; }
+            .tagline { font-size: 22px; margin-bottom: 8px; }
+            .positioning { font-size: 11px; line-height: 1.55; }
+
+            .method { padding: 12px 16px 12px 18px; }
+            .method-title { font-size: 16px; margin-bottom: 4px; }
+            .method-text { font-size: 10px; line-height: 1.55; }
+
+            .columns { gap: 24px; }
+            .col-title { font-size: 15px; margin-bottom: 8px; }
+            .item { padding: 7px 0; }
+            .item-num { font-size: 13px; min-width: 20px; }
+            .item-name { font-size: 11px; margin-bottom: 1px; }
+            .item-desc { font-size: 9px; line-height: 1.45; }
+
+            .journey { padding: 12px 0; gap: 10px; }
+            .journey-num { width: 30px; height: 30px; line-height: 28px; font-size: 12px; margin-bottom: 6px; }
+            .journey-name { font-size: 9px; letter-spacing: 1.8px; margin-bottom: 2px; }
+            .journey-desc { font-size: 8.5px; line-height: 1.4; }
+
+            .evidence { gap: 16px; }
+            .evidence-num { font-size: 11px; margin-bottom: 2px; }
+            .evidence-title { font-size: 10.5px; margin-bottom: 4px; }
+            .evidence-text { font-size: 9px; line-height: 1.45; }
+
+            .foot { padding-top: 14px; }
+            .foot-cta { font-size: 16px; }
+            .foot-meta { font-size: 8.5px; line-height: 1.6; }
+
+            /* Avoid awkward page-breaks inside any single block */
+            .head, .hero-block, .method, .columns, .journey, .evidence, .foot {
+                page-break-inside: avoid;
+                break-inside: avoid;
+            }
+        }
+
         /* Responsive */
         @media (max-width: 900px) {
             body { padding: 24px 16px; }
