@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 80">
+  <!-- Arrow on the left -->
+  <g stroke="#B8956A" stroke-width="3" stroke-linecap="square" fill="none">
+    <line x1="30" y1="20" x2="30" y2="62"/>
+    <line x1="30" y1="20" x2="19" y2="32"/>
+    <line x1="30" y1="20" x2="41" y2="32"/>
+  </g>
+
+  <!-- Vertical gold rule between arrow and text -->
+  <line x1="58" y1="22" x2="58" y2="58" stroke="#B8956A" stroke-width="0.6" opacity="0.5"/>
+
+  <!-- ILIAD wordmark -->
+  <text x="78" y="52"
+        font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif"
+        font-weight="200"
+        font-size="30"
+        letter-spacing="9"
+        fill="#FFFFFF">ILIAD</text>
+</svg>

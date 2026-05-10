@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 280">
+  <!-- Arrow on the left -->
+  <g stroke="#B8956A" stroke-width="6" stroke-linecap="square" fill="none">
+    <line x1="140" y1="80" x2="140" y2="200"/>
+    <line x1="140" y1="80" x2="110" y2="112"/>
+    <line x1="140" y1="80" x2="170" y2="112"/>
+  </g>
+
+  <!-- Vertical gold rule between arrow and text -->
+  <line x1="220" y1="80" x2="220" y2="200" stroke="#B8956A" stroke-width="0.8" opacity="0.5"/>
+
+  <!-- ILIAD wordmark -->
+  <text x="260" y="135"
+        font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif"
+        font-weight="200"
+        font-size="58"
+        letter-spacing="16"
+        fill="#FFFFFF">ILIAD</text>
+
+  <!-- Tagline -->
+  <text x="260" y="180"
+        font-family="Inter, 'Helvetica Neue', Helvetica, Arial, sans-serif"
+        font-weight="400"
+        font-size="14"
+        letter-spacing="6"
+        fill="#B8956A">PERFORMANCE  ·  TESTING  ·  COACHING</text>
+</svg>
