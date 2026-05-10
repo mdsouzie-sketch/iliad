@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ILIAD — Summary</title>
+    <meta name="description" content="ILIAD performance testing and training facility — at-a-glance summary.">
+    <meta name="theme-color" content="#0A0A0A">
+    <meta name="robots" content="noindex">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 32'><rect x='11' y='8' width='2' height='24' fill='%23B8956A'/><polygon points='12,0 18,8 6,8' fill='%23B8956A'/></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700&family=Newsreader:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #0A0A0A;
+            --surface: #131313;
+            --ink: #FFFFFF;
+            --cream: #E8E3DA;
+            --muted: rgba(232, 227, 218, 0.55);
+            --faint: rgba(232, 227, 218, 0.35);
+            --accent: #B8956A;
+            --accent-soft: rgba(184, 149, 106, 0.6);
+            --rule: rgba(184, 149, 106, 0.18);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--ink);
+            -webkit-font-smoothing: antialiased;
+            line-height: 1.5;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            padding: 48px 24px;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Ambient watermark */
+        .ambient {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .ambient::before {
+            content: 'ILIAD';
+            font-family: 'Newsreader', serif;
+            font-style: italic;
+            font-weight: 300;
+            font-size: 540px;
+            color: rgba(184, 149, 106, 0.025);
+            -webkit-text-stroke: 1px rgba(184, 149, 106, 0.05);
+            letter-spacing: -10px;
+            line-height: 0.9;
+            white-space: nowrap;
+            user-select: none;
+            animation: ambient-fade 1.4s ease 0.2s both;
+        }
+
+        @keyframes ambient-fade { from { opacity: 0; } to { opacity: 1; } }
+
+        /* Sheet */
+        .sheet {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            max-width: 1100px;
+            background: linear-gradient(180deg, rgba(19, 19, 19, 0.9) 0%, rgba(10, 10, 10, 0.92) 100%);
+            border: 1px solid rgba(184, 149, 106, 0.16);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            padding: 56px 64px;
+            display: flex;
+            flex-direction: column;
+            gap: 36px;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Header */
+        .head {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            border-bottom: 1px solid var(--rule);
+            padding-bottom: 28px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .brand-mark {
+            width: 18px;
+            height: 24px;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .brand-mark::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1.5px;
+            height: 24px;
+            background: var(--accent);
+        }
+
+        .brand-mark::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 5px solid transparent;
+            border-right: 5px solid transparent;
+            border-bottom: 6px solid var(--accent);
+        }
+
+        .brand-text {
+            font-size: 24px;
+            font-weight: 200;
+            letter-spacing: 10px;
+            color: var(--ink);
+        }
+
+        .head-meta {
+            text-align: right;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--muted);
+            line-height: 1.8;
+        }
+
+        /* Hero block */
+        .hero-block {
+            text-align: center;
+        }
+
+        .tagline {
+            font-family: 'Newsreader', serif;
+            font-style: italic;
+            font-size: 38px;
+            font-weight: 300;
+            color: var(--accent);
+            margin-bottom: 18px;
+            line-height: 1.2;
+        }
+
+        .positioning {
+            font-size: 15px;
+            font-weight: 300;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.75);
+            max-width: 720px;
+            margin: 0 auto;
+        }
+
+        /* Method */
+        .method {
+            position: relative;
+            padding: 22px 26px 22px 32px;
+            background: linear-gradient(90deg, rgba(184, 149, 106, 0.08) 0%, rgba(184, 149, 106, 0.02) 100%);
+            border-left: 2px solid var(--accent);
+        }
+
+        .method-label {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 8px;
+        }
+
+        .method-title {
+            font-family: 'Newsreader', serif;
+            font-style: italic;
+            font-size: 24px;
+            font-weight: 300;
+            color: var(--cream);
+            margin-bottom: 8px;
+            line-height: 1.3;
+        }
+
+        .method-text {
+            font-size: 13px;
+            font-weight: 300;
+            color: var(--muted);
+            line-height: 1.7;
+        }
+
+        /* Two-column: Testing + Programs */
+        .columns {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .col-head {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 6px;
+        }
+
+        .col-title {
+            font-family: 'Newsreader', serif;
+            font-style: italic;
+            font-size: 22px;
+            font-weight: 300;
+            color: var(--cream);
+            margin-bottom: 18px;
+        }
+
+        .item-list { list-style: none; }
+
+        .item {
+            display: flex;
+            gap: 14px;
+            padding: 14px 0;
+            border-top: 1px solid var(--rule);
+            align-items: flex-start;
+        }
+
+        .item:last-child { border-bottom: 1px solid var(--rule); }
+
+        .item-num {
+            font-family: 'Newsreader', serif;
+            font-style: italic;
+            font-size: 18px;
+            color: var(--accent);
+            min-width: 28px;
+            line-height: 1.2;
+        }
+
+        .item-body { flex: 1; }
+
+        .item-name {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--ink);
+            margin-bottom: 4px;
+        }
+
+        .item-desc {
+            font-size: 12px;
+            font-weight: 300;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        /* Journey */
+        .journey {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            padding: 24px 0;
+            border-top: 1px solid var(--rule);
+            border-bottom: 1px solid var(--rule);
+            position: relative;
+        }
+
+        .journey::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 12.5%;
+            right: 12.5%;
+            height: 1px;
+            background: repeating-linear-gradient(
+                to right,
+                rgba(184, 149, 106, 0.4),
+                rgba(184, 149, 106, 0.4) 6px,
+                transparent 6px,
+                transparent 12px
+            );
+            z-index: 0;
+        }
+
+        .journey-step {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .journey-num {
+            display: inline-block;
+            width: 44px;
+            height: 44px;
+            border: 1px solid var(--accent);
+            border-radius: 50%;
+            background: var(--bg);
+            font-family: 'Newsreader', serif;
+            font-style: italic;
+            font-size: 16px;
+            color: var(--accent);
+            line-height: 42px;
+            margin-bottom: 12px;
+        }
+
+        .journey-name {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2.5px;
+            text-transform: uppercase;
+            color: var(--ink);
+            margin-bottom: 4px;
+        }
+
+        .journey-desc {
+            font-size: 11px;
+            font-weight: 300;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+
+        /* Evidence */
+        .evidence {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .evidence-block {
+            border-left: 2px solid var(--accent);
+            padding-left: 18px;
+        }
+
+        .evidence-num {
+            font-family: 'Newsreader', serif;
+            font-style: italic;
+            font-size: 14px;
+            color: var(--accent);
+            margin-bottom: 6px;
+        }
+
+        .evidence-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: 8px;
+            line-height: 1.4;
+        }
+
+        .evidence-text {
+            font-size: 12px;
+            font-weight: 300;
+            color: var(--muted);
+            line-height: 1.6;
+        }
+
+        /* Foot CTA */
+        .foot {
+            padding-top: 28px;
+            border-top: 1px solid var(--rule);
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 30px;
+        }
+
+        .foot-cta {
+            font-family: 'Newsreader', serif;
+            font-style: italic;
+            font-size: 26px;
+            font-weight: 300;
+            color: var(--cream);
+        }
+
+        .foot-cta strong {
+            font-style: normal;
+            font-weight: 600;
+            color: var(--accent);
+            border-bottom: 1px solid var(--accent);
+        }
+
+        .foot-meta {
+            text-align: right;
+            font-size: 11px;
+            font-weight: 500;
+            letter-spacing: 1.8px;
+            text-transform: uppercase;
+            color: var(--muted);
+            line-height: 1.9;
+        }
+
+        .foot-meta a {
+            color: var(--muted);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .foot-meta a:hover {
+            color: var(--accent);
+        }
+
+        /* Reveal */
+        @media (prefers-reduced-motion: no-preference) {
+            .sheet > * {
+                opacity: 0;
+                transform: translateY(12px);
+                animation: rise 0.7s ease forwards;
+            }
+            .sheet > *:nth-child(1) { animation-delay: 0.10s; }
+            .sheet > *:nth-child(2) { animation-delay: 0.20s; }
+            .sheet > *:nth-child(3) { animation-delay: 0.30s; }
+            .sheet > *:nth-child(4) { animation-delay: 0.40s; }
+            .sheet > *:nth-child(5) { animation-delay: 0.50s; }
+            .sheet > *:nth-child(6) { animation-delay: 0.60s; }
+            .sheet > *:nth-child(7) { animation-delay: 0.70s; }
+        }
+
+        @keyframes rise {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            body { padding: 24px 16px; }
+            .sheet { padding: 36px 28px; gap: 28px; }
+            .ambient::before { font-size: 320px; }
+            .tagline { font-size: 28px; }
+            .method-title { font-size: 19px; }
+            .columns { grid-template-columns: 1fr; gap: 28px; }
+            .journey { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+            .journey::before { display: none; }
+            .evidence { grid-template-columns: 1fr; gap: 20px; }
+            .foot { flex-direction: column; align-items: flex-start; gap: 18px; }
+            .foot-meta { text-align: left; }
+            .foot-cta { font-size: 20px; }
+            .head { flex-direction: column; align-items: flex-start; gap: 14px; }
+            .head-meta { text-align: left; }
+        }
+
+        @media (max-width: 480px) {
+            .ambient::before { font-size: 200px; letter-spacing: -4px; }
+            .sheet { padding: 28px 22px; }
+            .brand-text { font-size: 18px; letter-spacing: 7px; }
+            .tagline { font-size: 24px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ambient" aria-hidden="true"></div>
+
+    <div class="sheet">
+
+        <header class="head">
+            <div class="brand">
+                <div class="brand-mark"></div>
+                <div class="brand-text">ILIAD</div>
+            </div>
+            <div class="head-meta">
+                <div>Performance Testing &amp; Training Facility</div>
+                <div>San Diego, CA</div>
+            </div>
+        </header>
+
+        <div class="hero-block">
+            <div class="tagline">Find your weakness. Write your epic.</div>
+            <p class="positioning">
+                ILIAD is a performance testing and training facility built on a single principle:
+                test before you train. We measure what other gyms guess at — force production,
+                sprint phases, movement quality — and we program from data instead of templates.
+            </p>
+        </div>
+
+        <div class="method">
+            <div class="method-label">The Method</div>
+            <div class="method-title">Most training is hope. Ours is method.</div>
+            <p class="method-text">
+                Every athlete starts with a 90-minute diagnostic. Every program is calibrated
+                from the data the diagnostic produces. Every six weeks we re-test to confirm
+                the work is producing the change we expected.
+            </p>
+        </div>
+
+        <div class="columns">
+            <div class="col">
+                <div class="col-head">Testing — The Diagnostic</div>
+                <div class="col-title">90 minutes. Three protocols.</div>
+                <ul class="item-list">
+                    <li class="item">
+                        <span class="item-num">I.</span>
+                        <div class="item-body">
+                            <div class="item-name">Force Plate Testing</div>
+                            <div class="item-desc">CMJ, single-leg, isometric pull. Power asymmetry exposed at 1000Hz.</div>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <span class="item-num">II.</span>
+                        <div class="item-body">
+                            <div class="item-name">Speed Analysis</div>
+                            <div class="item-desc">0–10 / 10–20 / 20–30 yard splits + 5-10-5 pro-agility. Phase-by-phase.</div>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <span class="item-num">III.</span>
+                        <div class="item-body">
+                            <div class="item-name">Movement Screening</div>
+                            <div class="item-desc">7-pattern FMS with video, asymmetry score, joint-level mobility flags.</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col">
+                <div class="col-head">Programs — From Diagnosis to Discipline</div>
+                <div class="col-title">Four programs, one philosophy.</div>
+                <ul class="item-list">
+                    <li class="item">
+                        <span class="item-num">I.</span>
+                        <div class="item-body">
+                            <div class="item-name">Performance Coaching</div>
+                            <div class="item-desc">1:1 sport-specific programming for the competitive athlete.</div>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <span class="item-num">II.</span>
+                        <div class="item-body">
+                            <div class="item-name">Personal Training</div>
+                            <div class="item-desc">General strength training for function and longevity.</div>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <span class="item-num">III.</span>
+                        <div class="item-body">
+                            <div class="item-name">Corrective Exercise</div>
+                            <div class="item-desc">Targeted intervention for asymmetries the screen revealed.</div>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <span class="item-num">IV.</span>
+                        <div class="item-body">
+                            <div class="item-name">Recovery &amp; Stretching</div>
+                            <div class="item-desc">Assisted stretching and structured recovery — the work between the work.</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="journey">
+            <div class="journey-step">
+                <div class="journey-num">I</div>
+                <div class="journey-name">Assess</div>
+                <div class="journey-desc">90-minute diagnostic</div>
+            </div>
+            <div class="journey-step">
+                <div class="journey-num">II</div>
+                <div class="journey-name">Analyze</div>
+                <div class="journey-desc">Identify the limiter</div>
+            </div>
+            <div class="journey-step">
+                <div class="journey-num">III</div>
+                <div class="journey-name">Optimize</div>
+                <div class="journey-desc">Calibrated programming</div>
+            </div>
+            <div class="journey-step">
+                <div class="journey-num">IV</div>
+                <div class="journey-name">Master</div>
+                <div class="journey-desc">Re-test, refine, repeat</div>
+            </div>
+        </div>
+
+        <div class="evidence">
+            <div class="evidence-block">
+                <div class="evidence-num">i.</div>
+                <div class="evidence-title">Calibrated training outproduces generic training</div>
+                <div class="evidence-text">Programming individualized against measured profile produces larger gains than uncalibrated programs of equal volume.</div>
+            </div>
+            <div class="evidence-block">
+                <div class="evidence-num">ii.</div>
+                <div class="evidence-title">Asymmetry detected is asymmetry that doesn't become injury</div>
+                <div class="evidence-text">Pre-season screening + structured corrective work in response to data is associated with reduced time-loss injuries.</div>
+            </div>
+            <div class="evidence-block">
+                <div class="evidence-num">iii.</div>
+                <div class="evidence-title">Athletic foundation is what every later quality is built on</div>
+                <div class="evidence-text">Athletes built on a measured foundation outlast athletes who specialize on top of unknowns.</div>
+            </div>
+        </div>
+
+        <footer class="foot">
+            <div class="foot-cta">
+                Begin: <a href="book.html"><strong>book the assessment</strong></a>
+            </div>
+            <div class="foot-meta">
+                <div><a href="mailto:hello@iliadlab.com">hello@iliadlab.com</a> &nbsp; · &nbsp; +1 (555) 452-3742</div>
+                <div><a href="https://mdsouzie-sketch.github.io/iliad/">mdsouzie-sketch.github.io/iliad</a></div>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>
