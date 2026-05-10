@@ -37,8 +37,8 @@ window.SITE_CONTENT = {
 
     contact: {
         email: "hello@iliadlab.com",
-        phone: "+1 (555) 452-3742",
-        location: "San Diego, CA",
+        phone: "+1 (442) 216-8774",
+        location: "Vista, CA",
     },
 
     // ---- Top navigation (appears on every page) ----
@@ -87,7 +87,7 @@ window.SITE_CONTENT = {
 
         stats: {
             stat1: { number: "15+", label: "Performance Metrics" },
-            stat2: { number: "90", label: "Minute Protocol" },
+            stat2: { number: "90", label: "Minute Assessment" },
             stat3: { number: "100%", label: "Data-Driven" },
         },
 
@@ -119,7 +119,7 @@ window.SITE_CONTENT = {
             card2: {
                 number: "CHAPTER II",
                 title: "Speed Analysis",
-                description: "Laser-timed velocity profiling. Where acceleration breaks down. Where transition stalls. Where top speed plateaus. Every phase of the sprint, measured.",
+                description: "Laser-timed velocity profiling. Where acceleration breaks down. Where top speed plateaus. Where deficits are revealed. Every phase of the sprint, measured.",
                 features: [
                     "0–10 yard acceleration",
                     "10–20 yard transition",
@@ -130,7 +130,7 @@ window.SITE_CONTENT = {
             card3: {
                 number: "CHAPTER III",
                 title: "Movement Screening",
-                description: "Functional patterns expose compensation. Mobility restrictions predict injury. Seven movements reveal what your body cannot do — yet.",
+                description: "Functional patterns expose compensation. Mobility restrictions predict injury. Seven movements reveal how well you can move.",
                 features: [
                     "7-pattern FMS protocol",
                     "Video documentation",
@@ -244,7 +244,7 @@ window.SITE_CONTENT = {
         forcePlates: {
             number: "CHAPTER I",
             title: "Force Plate Testing",
-            lead: "Every athlete has a stronger side. Most don't know which one — until it breaks. Force plate testing puts numbers on what compensation has been hiding for years.",
+            lead: "Every athlete has a stronger side. Most don't know which one — until it breaks. Force plate testing puts numbers on what asymmetries have been hiding for years.",
             measureHead: "What we measure",
             measureItems: [
                 "Countermovement jump (CMJ) — peak force, peak power, jump height",
@@ -252,10 +252,10 @@ window.SITE_CONTENT = {
                 "Reactive strength index — stretch-shortening cycle efficiency",
                 "Isometric mid-thigh pull — maximum force in a controlled position",
                 "Concentric / eccentric phase splits — where the asymmetry actually lives",
-                "Rate of force development — how fast the engine spins up",
+                "Rate of force development — how quickly you achieve peak force",
             ],
             howItWorksHead: "How it works",
-            howItWorksProse: "Three to five repetitions per protocol on dual force plates sampling at 1000Hz. The software produces a side-by-side comparison and benchmarks results against position-specific norms. You leave with a written report; we keep a baseline for comparison on the next visit.",
+            howItWorksProse: "Three tests per protocol on dual force plates sampling at 1000Hz. The software produces a side-by-side comparison and benchmarks results against sport-specific norms. You leave with a written report; we keep a baseline for comparison on the next visit.",
             bestForHead: "Best for",
             bestForProse: "Athletes returning from lower-body injury. Performers whose results have plateaued. Combine and pro-day prep. Teams establishing a roster baseline. Anyone whose training depends on jumping, sprinting, or single-leg power.",
         },
@@ -401,9 +401,9 @@ window.SITE_CONTENT = {
             title: "Most training is hope. Ours is method.",
             lead: "Without measurement, training is guessing in expensive shoes — reps you can't tie to outcomes, programs that \"feel right,\" adaptations you assume happened, cycles you finish without knowing what they did.",
             sub1Head: "Why we measure",
-            sub1Prose: "Effort is honest. Data is honest. Most programming is neither. We don't trust opinions about your body — yours, ours, or anyone else's. We trust force curves, split times, and screen scores. Numbers don't flatter; they describe. And what we describe, we can change.",
+            sub1Prose: "Effort is honest. Data is honest. Most programming is neither. We don't leave your performance to a guessing game. We trust force curves, split times, and screen scores. Numbers don't flatter; they describe. And what we describe, we can change.",
             sub2Head: "What goes unmeasured",
-            sub2Prose: "Every athlete who got hurt in a way that surprised them was carrying the answer the whole time. The plates would have shown it. The screen would have flagged it. The split times would have called it out by name. Nobody asked.",
+            sub2Prose: "Every athlete who got hurt in a way that surprised them was carrying the answer the whole time. Force plates allow us to see asymmetries. The screen shows structural limitations.",
             sub3Head: "The cost of skipping it",
             sub3Prose: "Assessment is not an introduction to training. It is the foundation of training. Skipping it is not faster — it is more expensive. Paid in injuries, paid in plateaus, paid in cycles spent driving the wrong adaptation hard.",
         },
@@ -525,7 +525,7 @@ window.SITE_CONTENT = {
         assessment: {
             number: "TIER I",
             title: "The Assessment",
-            lead: "The 90-minute diagnostic. The foundation of everything that follows. <strong>$[XXX]</strong> — single session, no commitment beyond the visit.",
+            lead: "The 90-minute diagnostic. The foundation of everything that follows. <strong>$100</strong> — single session, no commitment beyond the visit.",
             includedHead: "What's included",
             includedItems: [
                 "Full force-plate protocol — CMJ, single-leg, isometric pull",
@@ -542,7 +542,7 @@ window.SITE_CONTENT = {
         programs: {
             number: "TIER II",
             title: "Programs",
-            lead: "Ongoing training built from your assessment data. Monthly engagement, cancel anytime. <strong>$[XXX]–$[XXX] / month</strong> depending on program and session frequency.",
+            lead: "Ongoing training built from your assessment data. Monthly engagement, cancel anytime. <strong>$200–$300 / month</strong> depending on program and session frequency.",
             coachingHead: "Performance Coaching",
             coachingProse: "<strong>$[XXX] / month.</strong> Weekly 1:1 coached sessions, sport-specific programming, continuous data tracking, re-tests every 4–6 weeks. For competitive athletes whose performance has measurable consequences.",
             trainingHead: "Personal Training",
@@ -550,7 +550,7 @@ window.SITE_CONTENT = {
             correctiveHead: "Corrective Exercise",
             correctiveProse: "<strong>$[XXX] / month</strong> for a focused 4–12 week block. Targeted intervention for the asymmetries the screen revealed; runs alongside another program until the patterns clear.",
             recoveryHead: "Recovery & Stretching",
-            recoveryProse: "<strong>$[XX] per session</strong> (45 min) or <strong>$[XX] per session</strong> (60 min). Available as drop-ins or as a recovery package alongside any program.",
+            recoveryProse: "<strong>$30 per session</strong> (30 min) or <strong>$60 per session</strong> (60 min). Available as drop-ins or as a recovery package alongside any program.",
         },
 
         bundles: {
