@@ -474,15 +474,11 @@ window.SITE_CONTENT = {
         },
 
         team: {
-            number: "THE TEAM",
+            number: "THE PRACTITIONER",
             title: "Who you'll work with.",
-            lead: "ILIAD is run by a small team of practitioners with deep backgrounds in strength and conditioning, sports medicine, and performance science. Real people, real credentials, on the floor with you.",
+            lead: "ILIAD is run by a single practitioner — the person who tests you is the person who programs for you, and the person on the floor with you when you re-test. Continuity is built in.",
             member1Name: "[Founder Name]",
-            member1Bio: "[Role / title]. [Credentials — e.g. CSCS, CSCCa, MS in Exercise Science]. [Years of experience] working with [population — collegiate, professional, tactical, etc.]. [Brief background — where trained, who they've worked with, what they specialize in.] [Optional one-line on what drives them or the philosophy they bring.]",
-            member2Name: "[Second Practitioner Name]",
-            member2Bio: "[Role / title]. [Credentials]. [Years of experience]. [Brief background and specialty]. [Optional philosophy line.]",
-            member3Name: "[Third Practitioner / Coach]",
-            member3Bio: "[Role / title]. [Credentials]. [Brief background]. [Specialty / focus.]",
+            member1Bio: "[Bio — to be filled in.]",
         },
 
         facility: {
