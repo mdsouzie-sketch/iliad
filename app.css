@@ -734,8 +734,11 @@ footer {
 
 /* Tablet */
 @media (max-width: 1024px) {
-    nav { padding: 24px 32px; }
-    .nav-links { gap: 30px; }
+    nav { padding: 20px 28px; }
+    .nav-links { gap: 22px; font-size: 11px; }
+    .nav-links a { letter-spacing: 1.5px; }
+    .nav-cta { padding: 9px 20px; font-size: 10px; letter-spacing: 1.5px; }
+    .logo-text { font-size: 14px; letter-spacing: 6px; }
 
     .hero { padding: 0 32px; }
     .hero-title { font-size: 96px; }
@@ -766,6 +769,16 @@ footer {
     .protocol { padding: 60px 32px; }
     .protocol-title { font-size: 44px; }
     .protocol-lead { font-size: 20px; }
+}
+
+/* iPad portrait — extra-tight nav spacing */
+@media (max-width: 900px) {
+    nav { padding: 16px 20px; }
+    .nav-links { gap: 14px; font-size: 10px; }
+    .nav-links a { letter-spacing: 1.2px; }
+    .nav-cta { padding: 7px 14px; font-size: 9px; letter-spacing: 1px; }
+    .logo-text { font-size: 13px; letter-spacing: 5px; }
+    .logo { gap: 10px; }
 }
 
 /* Mobile */
