@@ -87,7 +87,7 @@ window.SITE_CONTENT = {
 
         stats: {
             stat1: { number: "15+", label: "Performance Metrics" },
-            stat2: { number: "90", label: "Minute Assessment" },
+            stat2: { number: "90", label: "Minute Protocol" },
             stat3: { number: "100%", label: "Data-Driven" },
         },
 
