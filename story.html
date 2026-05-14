@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ILIAD — Instagram Story</title>
+    <meta name="robots" content="noindex">
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 32'><rect x='11' y='8' width='2' height='24' fill='%23B8956A'/><polygon points='12,0 18,8 6,8' fill='%23B8956A'/></svg>">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800&family=Newsreader:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg: #0A0A0A;
+            --ink: #F5F1EA;
+            --muted: #8B8378;
+            --accent: #B8956A;
+            --rule: rgba(184, 149, 106, 0.22);
+        }
+
+        html, body {
+            background: #1A1A1A;
+            color: var(--ink);
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 24px 16px 60px;
+        }
+
+        /* Toolbar */
+        .toolbar {
+            position: fixed;
+            top: 16px;
+            right: 16px;
+            z-index: 100;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .toolbar button {
+            padding: 10px 16px;
+            background: var(--accent);
+            color: #0A0A0A;
+            border: none;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            border-radius: 2px;
+            transition: background 0.2s ease;
+        }
+
+        .toolbar button:hover { background: var(--ink); }
+
+        .hint {
+            background: rgba(0,0,0,0.6);
+            color: var(--muted);
+            font-size: 10px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 8px 12px;
+            border-radius: 2px;
+            border: 1px solid var(--rule);
+            max-width: 180px;
+            text-align: center;
+        }
+
+        /* Story canvas — 1080 x 1920 (9:16) */
+        .story {
+            width: 1080px;
+            height: 1920px;
+            background: var(--bg);
+            color: var(--ink);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 80px 80px 80px;
+            box-shadow: 0 30px 90px rgba(0,0,0,0.6);
+
+            background-image:
+                radial-gradient(ellipse at 50% 0%, rgba(184, 149, 106, 0.14) 0%, transparent 55%),
+                radial-gradient(ellipse at 50% 100%, rgba(184, 149, 106, 0.10) 0%, transparent 55%);
+        }
+
+        /* Faded watermark */
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: 'Inter', sans-serif;
+            font-weight: 800;
+            font-size: 480px;
+            letter-spacing: 26px;
+            color: rgba(184, 149, 106, 0.04);
+            white-space: nowrap;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Greek border corners */
+        .corner {
+            position: absolute;
+            width: 70px;
+            height: 70px;
+            border-color: var(--accent);
+            opacity: 0.55;
+            z-index: 2;
+        }
+        .corner.tl { top: 40px; left: 40px; border-top: 2px solid; border-left: 2px solid; }
+        .corner.tr { top: 40px; right: 40px; border-top: 2px solid; border-right: 2px solid; }
+        .corner.bl { bottom: 40px; left: 40px; border-bottom: 2px solid; border-left: 2px solid; }
+        .corner.br { bottom: 40px; right: 40px; border-bottom: 2px solid; border-right: 2px solid; }
+
+        .zone { position: relative; z-index: 1; }
+
+        /* ============ TOP ZONE ============ */
+        .top {
+            text-align: center;
+        }
+
+        .brand-mark {
+            display: inline-block;
+            width: 36px;
+            height: 52px;
+            position: relative;
+            margin-bottom: 32px;
+        }
+        .brand-mark::before {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 4px; height: 52px;
+            background: var(--accent);
+        }
+        .brand-mark::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 0; height: 0;
+            border-left: 11px solid transparent;
+            border-right: 11px solid transparent;
+            border-bottom: 14px solid var(--accent);
+        }
+
+        .wordmark {
+            font-size: 128px;
+            font-weight: 200;
+            letter-spacing: 38px;
+            padding-left: 38px;
+            color: var(--ink);
+            line-height: 1;
+            margin-bottom: 30px;
+        }
+
+        .meta-row {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 22px;
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: var(--muted);
+            margin-bottom: 70px;
+        }
+        .meta-row .dot {
+            width: 5px; height: 5px;
+            background: var(--accent);
+            border-radius: 50%;
+        }
+
+        .tagline-text {
+            font-family: 'Newsreader', serif;
+            font-style: italic;
+            font-weight: 300;
+            font-size: 88px;
+            line-height: 1.12;
+            color: var(--accent);
+            margin-bottom: 44px;
+        }
+
+        .positioning {
+            font-size: 30px;
+            line-height: 1.55;
+            color: var(--ink);
+            max-width: 880px;
+            margin: 0 auto;
+            font-weight: 300;
+        }
+        .positioning strong {
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        /* Divider */
+        .divider {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 16px;
+            margin: 56px auto 0;
+            color: var(--accent);
+        }
+        .divider-line {
+            width: 140px;
+            height: 1px;
+            background: var(--accent);
+            opacity: 0.5;
+        }
+        .divider-dot {
+            width: 10px; height: 10px;
+            background: var(--accent);
+            transform: rotate(45deg);
+        }
+
+        /* ============ MIDDLE ZONE: TESTING + PROGRAMS ============ */
+        .mid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 56px;
+        }
+
+        .section-label {
+            text-align: center;
+            font-size: 17px;
+            font-weight: 700;
+            letter-spacing: 7px;
+            text-transform: uppercase;
+            color: var(--accent);
+            margin-bottom: 18px;
+        }
+
+        .col-title {
+            font-family: 'Newsreader', serif;
+            font-style: italic;
+            font-size: 36px;
+            font-weight: 400;
+            color: var(--ink);
+            margin-bottom: 22px;
+            text-align: center;
+        }
+
+        .item-list { list-style: none; }
+
+        .item {
+            display: flex;
+            gap: 18px;
+            padding: 18px 0;
+            border-top: 1px solid var(--rule);
+            align-items: baseline;
+        }
+        .item:last-child { border-bottom: 1px solid var(--rule); }
+
+        .item-num {
+            font-family: 'Newsreader', serif;
+            font-style: italic;
+            font-size: 28px;
+            color: var(--accent);
+            min-width: 42px;
+            line-height: 1;
+        }
+
+        .item-name {
+            font-size: 24px;
+            font-weight: 600;
+            color: var(--ink);
+            letter-spacing: 0.5px;
+        }
+
+        .item-sub {
+            display: block;
+            font-size: 15px;
+            font-weight: 400;
+            color: var(--muted);
+            margin-top: 5px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        /* ============ BOTTOM ZONE: JOURNEY + CTA ============ */
+        .journey {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+            padding: 36px 0;
+            border-top: 1px solid var(--rule);
+            border-bottom: 1px solid var(--rule);
+            position: relative;
+            margin-bottom: 60px;
+        }
+        .journey::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 11%;
+            right: 11%;
+            height: 1px;
+            background: repeating-linear-gradient(to right, var(--accent), var(--accent) 6px, transparent 6px, transparent 12px);
+            opacity: 0.45;
+            z-index: 0;
+        }
+        .journey-step {
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+        .journey-num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 72px; height: 72px;
+            border: 1px solid var(--accent);
+            border-radius: 50%;
+            background: var(--bg);
+            font-family: 'Newsreader', serif;
+            font-style: italic;
+            font-size: 30px;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+        .journey-name {
+            font-size: 19px;
+            font-weight: 700;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--ink);
+        }
+
+        .foot {
+            text-align: center;
+        }
+
+        .cta-headline {
+            font-family: 'Newsreader', serif;
+            font-style: italic;
+            font-size: 56px;
+            color: var(--ink);
+            line-height: 1.2;
+            margin-bottom: 32px;
+        }
+        .cta-headline strong {
+            font-style: normal;
+            font-weight: 600;
+            color: var(--accent);
+        }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 26px 72px;
+            background: var(--accent);
+            color: #0A0A0A;
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            border-radius: 2px;
+            margin-bottom: 36px;
+        }
+
+        .contact {
+            font-size: 20px;
+            font-weight: 500;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+        .contact .sep {
+            color: var(--accent);
+            margin: 0 18px;
+        }
+
+        /* Responsive preview — scale 1080px canvas to viewport */
+        .stage {
+            transform-origin: top center;
+        }
+
+        @media print {
+            @page {
+                size: 1080px 1920px;
+                margin: 0;
+            }
+            html, body { background: var(--bg); padding: 0; }
+            body { display: block; padding: 0; }
+            .toolbar { display: none; }
+            .story { box-shadow: none; }
+            .stage { transform: none !important; width: 1080px !important; height: 1920px !important; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="toolbar">
+        <button onclick="window.print()">Save as PDF</button>
+        <div class="hint">DevTools → 1080×1920 → screenshot the .story element for a pixel-perfect PNG.</div>
+    </div>
+
+    <div class="stage">
+    <div class="story">
+
+        <span class="corner tl"></span>
+        <span class="corner tr"></span>
+        <span class="corner bl"></span>
+        <span class="corner br"></span>
+        <div class="watermark">ILIAD</div>
+
+        <!-- TOP ZONE -->
+        <section class="zone top">
+            <div class="brand-mark"></div>
+            <div class="wordmark">ILIAD</div>
+            <div class="meta-row">
+                <span>Performance Testing</span>
+                <span class="dot"></span>
+                <span>Vista, CA</span>
+            </div>
+
+            <div class="tagline-text">Find your weakness.<br>Write your epic.</div>
+
+            <p class="positioning">
+                We measure what other gyms guess at — <strong>force, speed, movement</strong> —
+                then program from data instead of templates.
+            </p>
+
+            <div class="divider">
+                <span class="divider-line"></span>
+                <span class="divider-dot"></span>
+                <span class="divider-line"></span>
+            </div>
+        </section>
+
+        <!-- MIDDLE ZONE -->
+        <section class="zone mid">
+            <div class="col">
+                <div class="section-label">Testing</div>
+                <div class="col-title">90 min. Three protocols.</div>
+                <ul class="item-list">
+                    <li class="item">
+                        <span class="item-num">I.</span>
+                        <div>
+                            <span class="item-name">Force Plates</span>
+                            <span class="item-sub">CMJ · Asymmetry · Isometric</span>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <span class="item-num">II.</span>
+                        <div>
+                            <span class="item-name">Speed Analysis</span>
+                            <span class="item-sub">10 / 20 / 30 yd · 5-10-5</span>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <span class="item-num">III.</span>
+                        <div>
+                            <span class="item-name">Movement Screen</span>
+                            <span class="item-sub">7-pattern FMS · Video</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col">
+                <div class="section-label">Programs</div>
+                <div class="col-title">Four disciplines.</div>
+                <ul class="item-list">
+                    <li class="item">
+                        <span class="item-num">I.</span>
+                        <div>
+                            <span class="item-name">Performance Coaching</span>
+                            <span class="item-sub">1:1 · Sport-specific</span>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <span class="item-num">II.</span>
+                        <div>
+                            <span class="item-name">Personal Training</span>
+                            <span class="item-sub">Strength · Longevity</span>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <span class="item-num">III.</span>
+                        <div>
+                            <span class="item-name">Corrective Exercise</span>
+                            <span class="item-sub">Asymmetry · Mobility</span>
+                        </div>
+                    </li>
+                    <li class="item">
+                        <span class="item-num">IV.</span>
+                        <div>
+                            <span class="item-name">Recovery &amp; Stretching</span>
+                            <span class="item-sub">Assisted · Restorative</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- BOTTOM ZONE -->
+        <section class="zone bot">
+            <div class="journey">
+                <div class="journey-step">
+                    <div class="journey-num">I</div>
+                    <div class="journey-name">Assess</div>
+                </div>
+                <div class="journey-step">
+                    <div class="journey-num">II</div>
+                    <div class="journey-name">Analyze</div>
+                </div>
+                <div class="journey-step">
+                    <div class="journey-num">III</div>
+                    <div class="journey-name">Optimize</div>
+                </div>
+                <div class="journey-step">
+                    <div class="journey-num">IV</div>
+                    <div class="journey-name">Master</div>
+                </div>
+            </div>
+
+            <div class="foot">
+                <div class="cta-headline">
+                    Begin your epic.<br><strong>Book the assessment.</strong>
+                </div>
+                <a href="https://mdsouzie-sketch.github.io/iliad/book.html" class="cta-btn">Book Now</a>
+                <div class="contact">
+                    iliadltestinglab@gmail.com<span class="sep">·</span>@iliadtesting
+                </div>
+            </div>
+        </section>
+
+    </div>
+    </div>
+
+    <script>
+        function fit() {
+            const stage = document.querySelector('.stage');
+            const margin = 80;
+            const availW = window.innerWidth - margin;
+            const availH = window.innerHeight - margin;
+            const scale = Math.min(availW / 1080, availH / 1920, 1);
+            stage.style.transform = `scale(${scale})`;
+            stage.style.width = '1080px';
+            stage.style.height = (1920 * scale) + 'px';
+        }
+        fit();
+        window.addEventListener('resize', fit);
+    </script>
+
+</body>
+</html>

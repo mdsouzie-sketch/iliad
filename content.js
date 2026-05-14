@@ -31,12 +31,12 @@ window.SITE_CONTENT = {
     brand: {
         tagline: "Where heroes are tested",
         description: "A modern performance testing facility drawing from the greatest epic ever told. Find your weakness before it finds you. Write your own legend.",
-        copyright: "© 2026 Iliad. All rights reserved.",
+        copyright: "© 2026 ILIAD. All rights reserved.",
         privacyLine: "Privacy Policy • Terms of Service",
     },
 
     contact: {
-        email: "hello@iliadlab.com",
+        email: "iliadtestinglab@gmail.com",
         phone: "+1 (442) 216-8774",
         location: "Vista, CA",
     },
@@ -69,31 +69,29 @@ window.SITE_CONTENT = {
 
     // ---- Reusable button labels ----
     buttons: {
-        beginJourney: "Begin Your Journey",
+        bookAssessment: "Book Assessment",
         learnMore: "Learn More",
-        scheduleAssessment: "Schedule Assessment",
-        readMethod: "Read the method",
         cardLearnMore: "Learn more",
     },
 
     // ---- Home page (index.html) ----
     home: {
         hero: {
-            label: "Performance Testing Facility",
+            label: "Performance Testing and Training",
             title: "ILIAD",
             subtitle: "Find your weakness. Write your epic.",
-            description: "The Iliad told the stories of warriors brought down by hidden weaknesses. We make sure your story ends differently. We find the flaw first — through force plates, timing gates, and movement analysis — then we build the discipline that erases it: coaching, training, recovery.",
+            description: "<em>The Iliad</em> told the stories of warriors brought down by hidden weaknesses. We make sure your story ends differently. We find the flaw first — through force plates, timing gates, and movement analysis — then we build the discipline that erases it: coaching, training, corrective, recovery.",
         },
 
         stats: {
             stat1: { number: "15+", label: "Performance Metrics" },
             stat2: { number: "90", label: "Minute Assessment" },
-            stat3: { number: "100%", label: "Data-Driven" },
+            stat3: { number: "100%", label: "Data Driven" },
         },
 
         quote: {
-            text: "\"Achilles was the greatest warrior. One weakness brought him down. Every hero has an Achilles heel. We find yours first.\"",
-            attribution: "The Iliad Principle",
+            text: "\"Achilles was the greatest warrior. One unprotected heel ended him. Every athlete has one. We find yours first.\"",
+            attribution: "The ILIAD Principle",
         },
 
         // Testing summary section header on home
@@ -244,14 +242,14 @@ window.SITE_CONTENT = {
         forcePlates: {
             number: "CHAPTER I",
             title: "Force Plate Testing",
-            lead: "Every athlete has a stronger side. Most don't know which one — until it breaks. Force plate testing puts numbers on what asymmetries have been hiding for years.",
+            lead: "Every athlete has a stronger side. Most differences are unnoticed —minor, until they aren't. Force plate testing puts numbers on what asymmetries have been hiding for years.",
             measureHead: "What we measure",
             measureItems: [
                 "Countermovement jump (CMJ) — peak force, peak power, jump height",
                 "Single-leg jump asymmetry — left vs. right force production",
                 "Reactive strength index — stretch-shortening cycle efficiency",
                 "Isometric mid-thigh pull — maximum force in a controlled position",
-                "Concentric / eccentric phase splits — where the asymmetry actually lives",
+                "Concentric / eccentric phase splits — acceleration vs. deceleration strength",
                 "Rate of force development — how quickly you achieve peak force",
             ],
             howItWorksHead: "How it works",
@@ -263,7 +261,7 @@ window.SITE_CONTENT = {
         speed: {
             number: "CHAPTER II",
             title: "Speed Analysis",
-            lead: "Speed is the most expensive trait in sport — and the easiest to misdiagnose. A slow time might be an acceleration problem, a transition problem, a top-speed problem, or a change-of-direction problem. Each one demands a different fix. We measure all four.",
+            lead: "Speed is the most expensive trait in sport — and it isn't a single quality. Are you limited by acceleration mechanics, ankle stiffness, force production, or force absorption under change of direction? Each one demands a different fix. We measure all four.",
             measureHead: "What we measure",
             measureItems: [
                 "0–10 yard acceleration — pure start power and initial drive",
@@ -376,7 +374,7 @@ window.SITE_CONTENT = {
                 "Recovery protocols — programmed alongside your training week",
             ],
             howItWorksHead: "How it works",
-            howItWorksProse: "45- or 60-minute sessions, scheduled around your training. Each session opens with a quick check-in on what's tight, what's sore, and what training is coming up — then the work is built around that.",
+            howItWorksProse: "30- or 60-minute sessions, scheduled around your training. Each session opens with a quick check-in on what's tight, what's sore, and what training is coming up — then the work is built around that.",
             bestForHead: "Best for",
             bestForProse: "Athletes in heavy training blocks. In-season competitors managing accumulated load. Adults whose desk work is undoing what their training built. Anyone whose best progress is currently capped by how fast they recover.",
         },
@@ -393,7 +391,7 @@ window.SITE_CONTENT = {
             label: "The Method",
             title: "Journey",
             subtitle: "Test before you train.",
-            description: "The Iliad is full of warriors who fell to a weakness no one had measured. Every body has one. Most never know what theirs is — until it stops them. We start somewhere different: we find the flaw first, then we train the athlete it lives in.",
+            description: "<em>The Iliad</em> is full of warriors who fell to a weakness no one had measured. Every body has one. Most never know what theirs is — until it stops them. We start somewhere different: we find the flaw first, then we train the athlete it lives in.",
         },
 
         principle: {
@@ -417,7 +415,7 @@ window.SITE_CONTENT = {
             act2Head: "Act II — Analysis",
             act2Prose: "What separates analysis from data is the question we ask. We don't ask \"how do you compare?\" — we ask \"what is the limiter?\" Every athlete has one. Sometimes it's eccentric strength. Sometimes it's hip mobility. Sometimes it's a 38% asymmetry the athlete never knew they had. We find the bottleneck — not the long list of things that could be improved, but the one or two that, fixed, change everything else.",
             act3Head: "Act III — Optimization",
-            act3Prose: "Programs built on assessment data don't look like programs built without it. They aren't shorter. They're more specific. A general strength block becomes \"eccentric loading on the weaker leg, mobility work for the limited side, conditioning at the heart rate aligned to the actual aerobic ceiling we measured.\" Every set has a reason behind it. Nothing is there because someone else's program had it.",
+            act3Prose: "Programs built on assessment data don't look like programs built without it. They aren't shorter. They're more specific. A general block becomes \"plyometric work to improve reactive ability, resisted sprints to improve knee drive and knee extension, single-leg hinges to improve hip stability.\" Every set has a reason behind it. Nothing is there because someone else's program had it.",
             act4Head: "Act IV — Mastery",
             act4Prose: "Mastery is not a finish line. It's a state where the limiter is no longer the limiter. Your weakest link has caught up to the rest, and the system as a whole has moved up a tier. From there, the next limiter shows itself — and we test again. The cycle is not a hierarchy with a top. It is a spiral, and the question is always: what is bending the curve right now?",
         },
@@ -427,13 +425,13 @@ window.SITE_CONTENT = {
             title: "Three findings that built our method.",
             lead: "These aren't anecdotes. They're patterns the sports-science literature has shown across decades of research — and they shape every assessment, program, and re-test we run.",
             performanceHead: "Calibrated training outproduces generic training",
-            performanceProse: "The strength and conditioning literature is consistent: programming individualized against measured profile produces larger gains than uncalibrated programs of equal volume. Velocity-based load prescription beats fixed percentages of estimated 1RM. Force-plate-guided plyometric work outpaces volume-matched generic plyo. Sprint training aimed at the limiting phase moves splits faster than generic acceleration drills. The mechanism is the same every time — work pointed at the real gap outperforms work pointed at a guess.",
+            performanceProse: "The strength and conditioning literature is consistent: programming built against a measured profile outproduces uncalibrated programs of equal volume. Velocity-based load prescription beats fixed percentages of estimated 1RM. Force-plate-guided plyometric work outpaces volume-matched generic plyo. Sprint training aimed at the limiting phase moves splits faster than generic acceleration drills. The mechanism is the same every time — work pointed at the real gap beats work pointed at a guess.",
             injuryHead: "Asymmetry detected is asymmetry that doesn't become injury",
-            injuryProse: "A growing body of research links measurable inter-limb asymmetry — in jump height, force production, single-leg balance, range of motion — to elevated lower-extremity injury risk. The exact threshold varies by sport and metric, but the pattern repeats: athletes carrying significant left-right imbalances are more likely to be hurt under load. Pre-season movement screening, force-plate asymmetry profiling, and structured corrective work in response to the data have each been associated with reduced time-loss injuries in published research. The screen finds what compensation has been hiding. The corrective work clears it before the season starts.",
+            injuryProse: "A growing body of research links measurable inter-limb asymmetry — in jump height, force production, balance, range of motion — to elevated lower-extremity injury risk. Thresholds vary by sport and metric, but the pattern repeats: athletes carrying significant left-right imbalances are more likely to be hurt under load. Pre-season screening and structured corrective work have each been associated with fewer time-loss injuries. The screen finds what compensation hides. The corrective work clears it before the season starts.",
             foundationHead: "Athletic foundation is what every later quality is built on",
-            foundationProse: "Long-term athletic development models — refined over decades of applied research — converge on a single principle: athletes built on a measured foundation of strength, mobility, and movement quality outlast athletes who specialize on top of unknowns. The sport-specific qualities — speed, power, reactive ability — sit on top of more general capacities. When those capacities are profiled and developed deliberately, peak performance arrives sooner, plateaus less often, and lasts longer. When they aren't, ceilings appear earlier than they should — for reasons the athlete could have seen coming if anyone had been measuring.",
+            foundationProse: "Long-term athletic development models converge on a single principle: athletes built on a measured foundation of strength, mobility, and movement quality outlast athletes who specialize on top of unknowns. Sport-specific qualities — speed, power, reactive ability — sit on top of more general capacities. When those capacities are profiled and developed deliberately, peak performance arrives sooner, plateaus less often, and lasts longer. When they aren't, ceilings appear earlier than they should.",
             synthesisHead: "What the evidence asks of us",
-            synthesisProse: "Performance, injury risk, and athletic longevity each respond to the same intervention — measure, then act on what the measurement showed. The literature doesn't claim training without data is impossible. It claims training with data is more efficient and more durable. The case for assessment isn't ideological. It's empirical. Three threads of research arrive at the same conclusion: data is the edge.",
+            synthesisProse: "Performance, injury risk, and athletic longevity each respond to the same intervention — measure, then act on what the measurement showed. The case for assessment isn't ideological. It's empirical. Three threads of research arrive at the same conclusion: data is the edge.",
         },
 
         cycle: {
@@ -460,15 +458,15 @@ window.SITE_CONTENT = {
             label: "About",
             title: "ILIAD",
             subtitle: "Built by practitioners who got tired of training without data.",
-            description: "ILIAD is a performance testing and training facility in San Diego. We test what other gyms guess at, and we program from data instead of templates. The goal isn't to be the loudest voice in the room — it's to be the most accurate one.",
+            description: "ILIAD is a performance testing and training facility in Vista, CA. We test what other gyms guess at, and we program from data instead of templates. The goal isn't to be the loudest voice in the room — it's to be the most accurate one.",
         },
 
         story: {
             number: "THE STORY",
             title: "Why ILIAD exists.",
-            lead: "We watched too many athletes do everything right and still get hurt — or train for years and still plateau. The pattern was always the same. They were working hard at the wrong target, because nobody had measured what the right target actually was.",
+            lead: "Becoming great is not about effort — it's about precision. At the professional level, the difference between winning and losing can be measured in the fraction of a second. The difference between a career and a career cut short by injury is often a single imbalance. We built ILIAD to find those differences before they find you.",
             sub1Head: "The frustration",
-            sub1Prose: "Coaches working from intuition. Programs written for an average athlete who doesn't exist. Athletes spending years grinding on weaknesses they didn't know they had. Force plates and timing gates exist; movement screens exist; performance science exists. But most facilities don't use them. We wanted to build the place that does.",
+            sub1Prose: "Coaches working from outdated methods. Programs written for an average athlete who doesn't exist. Training done to generate views and drive engagement. Force plates and timing gates exist; movement screens exist; performance science exists. But most facilities don't use them. We wanted to build the place that does.",
             sub2Head: "The standard",
             sub2Prose: "Every athlete who walks through the door gets measured before they get programmed. Every program is calibrated against what the data showed. Every six weeks we re-test to see whether the work is producing the change we expected. The standard isn't fancy — it's just consistent. Most places don't hold to it. We do.",
         },
@@ -477,8 +475,8 @@ window.SITE_CONTENT = {
             number: "THE PRACTITIONER",
             title: "Who you'll work with.",
             lead: "ILIAD is run by a single practitioner — the person who tests you is the person who programs for you, and the person on the floor with you when you re-test. Continuity is built in.",
-            member1Name: "[Founder Name]",
-            member1Bio: "[Bio — to be filled in.]",
+            member1Name: "Matthew De Souza",
+            member1Bio: "Matthew De Souza is a Performance Coach and a Researcher at Cal State San Marcos. He is from Trinidad and Tobago, where he played soccer at the national level. His experiences in the National Program revealed to him the importance of training with intention and a clear direction. This inspired him to create a facility that bridges the gap between research, sport science and practice. He has a background in exercise science, biomechanics, and sports performance, and is passionate about using evidence-based methods to help athletes reach their full potential.",
         },
 
         facility: {
@@ -486,9 +484,9 @@ window.SITE_CONTENT = {
             title: "What we built.",
             lead: "A purpose-built testing and training space — not a gym with a corner cleared out for assessments. Every piece of equipment was chosen because it produces data we can act on.",
             sub1Head: "Testing equipment",
-            sub1Prose: "Dual force plates sampling at 1000Hz for jump and isometric protocols. Laser timing gates for sprint and change-of-direction work. Video capture for movement screens. Heart-rate and metabolic profiling tools. Everything calibrated, everything documented, every reading saved to your file.",
+            sub1Prose: "Dual force plates sampling at 1000Hz for jump and isometric protocols. Laser timing gates for sprint and change-of-direction work. Video capture for movement screens. Everything calibrated, everything documented, every reading saved to your file.",
             sub2Head: "Training space",
-            sub2Prose: "Open floor for sprint work and corrective patterning. Strength platforms with calibrated bars and plates. Mobility table for assisted stretching and soft-tissue sessions. The space supports the four programs the assessment funnels into — coaching, training, corrective, recovery — without compromise.",
+            sub2Prose: "Open floor for sprint work and corrective patterning. Strength platforms equipped for velocity-based training. Mobility table for assisted stretching and soft-tissue sessions. The space supports the four programs the assessment funnels into — coaching, training, corrective, recovery — without compromise.",
         },
 
         approach: {
@@ -548,7 +546,7 @@ window.SITE_CONTENT = {
             recoveryHead: "Recovery & Stretching",
             recoveryProse: "Assisted stretching, mobility flows, and structured soft-tissue work. Available as drop-ins or as a recovery package alongside any program.",
             teamHead: "Teams & Roster Assessments",
-            teamProse: "Custom pricing for teams testing 10+ athletes. Includes a team-level summary report identifying roster-wide injury risk and performance limiters. <a href=\"mailto:hello@iliadlab.com\">Contact us for a quote.</a>",
+            teamProse: "Custom pricing for teams testing 10+ athletes. Includes a team-level summary report identifying roster-wide injury risk and performance limiters. <a href=\"mailto:iliadtestinglab@gmail.com\">Contact us for a quote.</a>",
         },
 
         faq: {
