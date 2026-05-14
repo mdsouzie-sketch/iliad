@@ -20,15 +20,21 @@ section[id], footer[id] {
     scroll-margin-top: 90px;
 }
 
-/* Page-to-page fade-out transition */
+/* Page-to-page fade transition: fade-in on load, fade-out on link click */
+@keyframes page-fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
 html.js body {
+    opacity: 1;
     transition: opacity 0.3s ease;
+    animation: page-fade-in 0.35s ease both;
 }
 html.js body.is-leaving {
     opacity: 0;
 }
 @media (prefers-reduced-motion: reduce) {
-    html.js body { transition: none; }
+    html.js body { transition: none; animation: none; }
     html.js body.is-leaving { opacity: 1; }
 }
 
