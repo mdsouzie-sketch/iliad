@@ -30,7 +30,7 @@ window.SITE_CONTENT = {
     // ---- Shared (footer + copyright) ----
     brand: {
         tagline: "Where heroes are tested",
-        description: "A modern performance testing facility drawing from the greatest epic ever told. Find your weakness before it finds you. Write your own legend.",
+        description: "A modern performance testing facility drawing from the greatest epic ever told. Know thyself. Train accordingly.",
         copyright: "© 2026 ILIAD. All rights reserved.",
         privacyLine: "Privacy Policy • Terms of Service",
     },
@@ -79,8 +79,8 @@ window.SITE_CONTENT = {
         hero: {
             label: "Performance Testing and Training",
             title: "ILIAD",
-            subtitle: "Find your weakness. Write your epic.",
-            description: "<em>The Iliad</em> told the stories of warriors brought down by hidden weaknesses. We make sure your story ends differently. We find the flaw first — through force plates, timing gates, and movement analysis — then we build the discipline that erases it: coaching, training, corrective, recovery.",
+            subtitle: "Know thyself. Write your epic.",
+            description: "<em>The Iliad</em> celebrated warriors who knew themselves — and warned of those who didn't. We give you the same advantage: through force plates, timing gates, and movement analysis, we map who you are as an athlete. From that knowledge comes the training that makes you better: coaching, training, corrective, recovery.",
         },
 
         stats: {
@@ -90,15 +90,15 @@ window.SITE_CONTENT = {
         },
 
         quote: {
-            text: "\"Achilles was the greatest warrior. One unprotected heel ended him. Every athlete has one. We find yours first.\"",
+            text: "\"Achilles was the greatest warrior. What he didn't know about himself ended him. Every athlete has unknown ground. We map yours first.\"",
             attribution: "The ILIAD Principle",
         },
 
         // Testing summary section header on home
         testingSummary: {
             label: "What We Reveal",
-            title: "Every weakness. Every imbalance. Every risk.",
-            description: "Three testing protocols. One comprehensive picture. No vulnerability goes undetected.",
+            title: "Every strength. Every pattern. Every truth about how you move.",
+            description: "Three testing protocols. One comprehensive picture. Self-knowledge, measured.",
         },
 
         // The 3 testing summary cards on home
@@ -150,7 +150,7 @@ window.SITE_CONTENT = {
             card1: {
                 number: "DISCIPLINE I",
                 title: "Performance Coaching",
-                description: "One-on-one programming for the competitive athlete. Built from your assessment data, calibrated to your sport, targeted at the limiters we found.",
+                description: "One-on-one programming for the competitive athlete. Built from your assessment data, calibrated to your sport, targeted at the gaps we found.",
                 features: [
                     "Sport-specific programming",
                     "Weekly 1:1 sessions",
@@ -210,7 +210,7 @@ window.SITE_CONTENT = {
             step2: {
                 roman: "II",
                 title: "Analysis",
-                description: "Comprehensive report with percentile rankings, injury risk factors, and performance limiters identified.",
+                description: "Comprehensive report with percentile rankings, injury risk factors, and performance gaps identified.",
             },
             step3: {
                 roman: "III",
@@ -220,7 +220,7 @@ window.SITE_CONTENT = {
             step4: {
                 roman: "IV",
                 title: "Mastery",
-                description: "Weakness eliminated. Performance optimized. The athlete you were meant to be, fully realized.",
+                description: "Self-known. Optimized. The athlete you were meant to be, fully realized.",
             },
         },
 
@@ -312,7 +312,7 @@ window.SITE_CONTENT = {
         performanceCoaching: {
             number: "DISCIPLINE I",
             title: "Performance Coaching",
-            lead: "One-on-one programming for the competitive athlete. Calibrated to your sport, built from your assessment data, targeted at the limiters we found.",
+            lead: "One-on-one programming for the competitive athlete. Calibrated to your sport, built from your assessment data, targeted at the gaps we found.",
             includedHead: "What's included",
             includedItems: [
                 "Sport-specific programming — strength, power, speed, conditioning by season",
@@ -391,7 +391,7 @@ window.SITE_CONTENT = {
             label: "The Method",
             title: "Journey",
             subtitle: "Test before you train.",
-            description: "<em>The Iliad</em> is full of warriors who fell to a weakness no one had measured. Every body has one. Most never know what theirs is — until it stops them. We start somewhere different: we find the flaw first, then we train the athlete it lives in.",
+            description: "<em>The Iliad</em> is full of warriors who didn't fully know themselves. Every body has truths most never learn — until they stop them. We start somewhere different: we map who you are first, then we train the athlete you actually are.",
         },
 
         principle: {
@@ -413,11 +413,11 @@ window.SITE_CONTENT = {
             act1Head: "Act I — Assessment",
             act1Prose: "Ninety minutes. Three protocols. The plates record at 1000Hz; the screen is filmed; the gates capture velocity at multiple checkpoints. Force production, left and right. Speed across three phases. Movement quality across seven patterns. Nothing is interpreted from feel — every conclusion has a number behind it.",
             act2Head: "Act II — Analysis",
-            act2Prose: "What separates analysis from data is the question we ask. We don't ask \"how do you compare?\" — we ask \"what is the limiter?\" Every athlete has one. Sometimes it's eccentric strength. Sometimes it's hip mobility. Sometimes it's a 38% asymmetry the athlete never knew they had. We find the bottleneck — not the long list of things that could be improved, but the one or two that, fixed, change everything else.",
+            act2Prose: "What separates analysis from data is the question we ask. We don't ask \"how do you compare?\" — we ask \"what gap matters most?\" Every athlete has one. Sometimes it's eccentric strength. Sometimes it's hip mobility. Sometimes it's a 38% asymmetry the athlete never knew they had. We find the gap that matters — not the long list of things that could be improved, but the one or two that, closed, change everything else.",
             act3Head: "Act III — Optimization",
             act3Prose: "Programs built on assessment data don't look like programs built without it. They aren't shorter. They're more specific. A general block becomes \"plyometric work to improve reactive ability, resisted sprints to improve knee drive and knee extension, single-leg hinges to improve hip stability.\" Every set has a reason behind it. Nothing is there because someone else's program had it.",
             act4Head: "Act IV — Mastery",
-            act4Prose: "Mastery is not a finish line. It's a state where the limiter is no longer the limiter. Your weakest link has caught up to the rest, and the system as a whole has moved up a tier. From there, the next limiter shows itself — and we test again. The cycle is not a hierarchy with a top. It is a spiral, and the question is always: what is bending the curve right now?",
+            act4Prose: "Mastery is not a finish line. It's a state where the previous gap has closed — what was holding you back has caught up to the rest, and the system as a whole has moved up a tier. From there, the next gap shows itself — and we test again. The cycle is not a hierarchy with a top. It is a spiral, and the question is always: what is bending the curve right now?",
         },
 
         evidence: {
@@ -431,7 +431,7 @@ window.SITE_CONTENT = {
             foundationHead: "Athletic foundation is what every later quality is built on",
             foundationProse: "Long-term athletic development models converge on a single principle: athletes built on a measured foundation of strength, mobility, and movement quality outlast athletes who specialize on top of unknowns. Sport-specific qualities — speed, power, reactive ability — sit on top of more general capacities. When those capacities are profiled and developed deliberately, peak performance arrives sooner, plateaus less often, and lasts longer. When they aren't, ceilings appear earlier than they should.",
             synthesisHead: "What the evidence asks of us",
-            synthesisProse: "Performance, injury risk, and athletic longevity each respond to the same intervention — measure, then act on what the measurement showed. The case for assessment isn't ideological. It's empirical. Three threads of research arrive at the same conclusion: data is the edge.",
+            synthesisProse: "Performance, injury risk, and athletic longevity each respond to the same intervention — measure, then act on what the measurement showed. The case for assessment isn't ideological. It's empirical. Three threads of research arrive at the same conclusion: knowledge is the advantage.",
         },
 
         cycle: {
@@ -525,7 +525,7 @@ window.SITE_CONTENT = {
                 "Full force-plate protocol — CMJ, single-leg, isometric pull",
                 "Speed protocol — 0–10 / 10–20 / 20–30 yard splits + 5-10-5",
                 "Seven-pattern Functional Movement Screen with video review",
-                "Written report with percentile rankings and identified limiters",
+                "Written report with percentile rankings and identified gaps",
                 "30-minute results review session within one week",
                 "Baseline saved to your file for future re-tests",
             ],
@@ -546,7 +546,7 @@ window.SITE_CONTENT = {
             recoveryHead: "Recovery & Stretching",
             recoveryProse: "Assisted stretching, mobility flows, and structured soft-tissue work. Available as drop-ins or as a recovery package alongside any program.",
             teamHead: "Teams & Roster Assessments",
-            teamProse: "Custom pricing for teams testing 10+ athletes. Includes a team-level summary report identifying roster-wide injury risk and performance limiters. <a href=\"mailto:iliadtestinglab@gmail.com\">Contact us for a quote.</a>",
+            teamProse: "Custom pricing for teams testing 10+ athletes. Includes a team-level summary report identifying roster-wide injury risk and performance gaps. <a href=\"mailto:iliadtestinglab@gmail.com\">Contact us for a quote.</a>",
         },
 
         faq: {
